@@ -33,13 +33,20 @@ RULES FOR ALL RUNS
   not the content.
 - No client names or data traceable to a client.
 - Tribal-specific content only when the Topic says so.
-- Research: use the WebSearch and WebFetch tools, not curl. Some
-  government sites (healthcare.gov in particular) refuse automated
-  fetches; when one does, confirm the same rule from another primary
-  source (eCFR, Federal Register, irs.gov, dol.gov, cms.gov) or a
-  search-result excerpt, and name the source you actually verified
-  against in review.txt. Only mark a claim UNVERIFIED after trying at
-  least two sources.
+- Research. Government primary sources are required for every rule,
+  limit, deadline, and figure (IRS, DOL/EBSA, CMS, HHS, eCFR, Federal
+  Register, state agencies; for California, DMHC, CDI, FTB, EDD).
+  Find pages with WebSearch. Read each source with WebFetch; if
+  WebFetch fails or is unavailable, use the kit's fetch helper from
+  the repository root, which works on sites that refuse automated
+  tools:
+    python3 fetch.py "<url>"                 page or PDF as text
+    python3 fetch.py ecfr 45 147.130         current regulation text
+    python3 fetch.py fedreg "search words"   newest Federal Register items
+  Cite the exact URL you read. If a source still cannot be read after
+  WebFetch and fetch.py, try a second primary source for the same
+  fact; only then mark it UNVERIFIED in review.txt, quoting the exact
+  FETCH FAILED message.
 - Never send email, publish, or post anything. This task only drafts
   and saves files.
 

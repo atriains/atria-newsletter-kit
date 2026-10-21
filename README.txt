@@ -58,3 +58,5 @@ Routine files
 - upload.py           uploads finished files to SharePoint 1-Review via
                       Microsoft Graph (needs ATRIA_TENANT_ID,
                       ATRIA_CLIENT_ID, ATRIA_CLIENT_SECRET)
+- fetch.py            reads government pages, PDFs, eCFR sections, and
+                      Federal Register searches as text for source checks
