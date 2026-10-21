@@ -6,7 +6,7 @@ Usage:  python3 upload.py "<folder name>" file1 [file2 ...]
 Needs three environment variables (set in the Claude cloud environment):
   ATRIA_TENANT_ID, ATRIA_CLIENT_ID, ATRIA_CLIENT_SECRET
 for the Entra app "Atria Newsletter Uploader" (Graph application
-permission Sites.Selected, granted write on the Atria site only).
+permission Sites.ReadWrite.All; this script writes only to 1-Review).
 
 Never overwrites anything: if 1-Review/<folder>/ already exists, it uploads
 into <folder>_v2 (then _v3, ...) instead and prints the folder it used.

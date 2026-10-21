@@ -28,7 +28,7 @@ module.exports = function makePage2(ctx) {
   // rough text height (inches) for Segoe UI at font size fs in box width w
   const lines = (t, w, fs) => String(t || '').split('\n').reduce((n, p) => n + Math.max(1, Math.ceil(p.length / Math.max(1, (w * 72) / (0.47 * fs)))), 0);
   const th = (t, w, fs, ls = 1.15) => lines(t, w, fs) * fs * ls * 1.12 / 72;
-  const HEAD = 0.62; // numbered tab row
+  const HEAD = 0.86; // numbered tab row
 
   const T = {
     story: {
