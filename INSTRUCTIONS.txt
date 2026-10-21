@@ -100,7 +100,9 @@ labeled lines:
     [kebab-name].png, YYYY/MM = send/post date)
   Mid-article image prompt: [what it should show; same rules; roughly
     square, at least 600x600]
-  Mid-article image alt text: [must match the alt in wordpress.html]
+  Mid-article image alt text: [must match the alt in wordpress.html,
+    and describe what the prompt asks for; if the prompt has no
+    people, the alt text has no people]
   PDF link: [PDF LINK] is in wordpress.html (Track A only); replace it
     with the uploaded PDF's media URL.
 
@@ -147,6 +149,13 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
    tone, not Track B blog style. Follow WORDPRESS FILES above, and
    write wordpress-post.txt with it.
 4. email.txt  - subject, preview text, short body introducing the PDF.
+   Written to the client's HR or benefits contact, who forwards it:
+   one line on why it matters to their employees now, a short summary,
+   and an offer to help. Benefits 101 and Well-Being bodies must read
+   well if forwarded to employees as-is. Never say "this month's" or
+   imply a fixed cadence. Sign off exactly:
+     The Atria Team
+     (507) 500-8377 | help@atriains.com | atriains.com
 5. review.txt - sources with links, figures to double-check, topic
    rationale, recipe photo link (Well-Being), open questions.
 
@@ -268,5 +277,9 @@ STEP 3 - SAVE AND DELIVER
    change.
 5. Never move, rename, or delete any existing SharePoint item. Never
    write to 2-Approved or 3-Published.
-6. Finish with a one-paragraph summary, the file list with OK/FAIL,
+6. Send one push notification (PushNotification tool) before
+   finishing: category, issue, topic, the 1-Review folder used, and
+   any FAIL or UNVERIFIED item. Send it on success too, not only on
+   problems.
+7. Finish with a one-paragraph summary, the file list with OK/FAIL,
    and the link to the 1-Review folder.
