@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(./setup.sh)",
+      "Bash(bash setup.sh)",
+      "Bash(./build.sh *)",
+      "Bash(bash build.sh *)",
+      "Bash(python3 upload.py *)",
+      "Bash(python3 fetch.py *)"
+    ]
+  }
+}

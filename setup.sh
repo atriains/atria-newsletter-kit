@@ -17,7 +17,5 @@ cat > ~/.config/fontconfig/fonts.conf <<'XML'
 </fontconfig>
 XML
 fc-cache -f >/dev/null
-# qpdf shrinks the PDF; optional
-command -v qpdf >/dev/null || (apt-get install -y -qq qpdf >/dev/null 2>&1 || sudo apt-get install -y -qq qpdf >/dev/null 2>&1) || echo "qpdf not installed (PDF will be larger; fine)"
 echo "Segoe UI -> $(fc-match 'Segoe UI')"
 echo "Cambria  -> $(fc-match Cambria)"

@@ -4,9 +4,12 @@ Dustin's routine prompt directs every run to follow this file.)
 
 TOPIC SELECTION AND VARIETY
 Two files in Newsletters/_Templates/ hold the history and the idea list:
-- Atria-Content-Log.txt (item 01PKRI2JP7SREGT47PXRFY2ECOOWNE3Y7T): every
+- Atria-Content-Log.txt (item 01PKRI2JP7SREGT47PXRFY2ECOOWNE3Y7T;
+  path Atria File Server/Marketing/Newsletters/_Templates/Atria-Content-Log.txt): every
   piece drafted so far, with topic, angle, example/persona, headline.
-- Atria-Topic-Ideas.txt (item 01PKRI2JPAWT7RMMY55BC2AALUOSCRC5BN):
+- Atria-Topic-Ideas.txt (item 01PKRI2JPAWT7RMMY55BC2AALUOSCRC5BN;
+  path Atria File Server/Marketing/Newsletters/_Templates/Atria-Topic-Ideas.txt;
+  if one form fails, use the other or sharepoint_search for the name):
   Dustin's ideas from real client questions.
 Read both before choosing anything.
 1. If the schedule row names a Topic, use it.
