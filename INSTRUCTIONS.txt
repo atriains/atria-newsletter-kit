@@ -33,9 +33,32 @@ RULES FOR ALL RUNS
   not the content.
 - No client names or data traceable to a client.
 - Tribal-specific content only when the Topic says so.
-- Research. Government primary sources are required for every rule,
-  limit, deadline, and figure (IRS, DOL/EBSA, CMS, HHS, eCFR, Federal
-  Register, state agencies; for California, DMHC, CDI, FTB, EDD).
+- Research. Use only trusted, highly reputable sources, as broadly as
+  the topic needs. Government primary sources are required for every
+  rule, limit, deadline, and legal requirement; the other tiers add
+  data, context, and practical guidance.
+  Tier 1, primary (required for rules and figures): IRS, Treasury,
+  DOL/EBSA, HHS, CMS, CDC, NIH, FDA, USDA (MyPlate, FoodData Central),
+  OSHA, EEOC, SSA, OPM, IHS, CISA, NIST, eCFR, Federal Register,
+  Congress.gov, GAO, CBO, healthcare.gov; state agencies (California:
+  DMHC, CDI, FTB, EDD, CDPH, Covered California; Minnesota and
+  Wisconsin insurance and revenue departments when relevant).
+  Tier 2, research and nonpartisan data: KFF, EBRI, Commonwealth Fund,
+  RAND, Peterson-KFF Health System Tracker, NAIC, Bureau of Labor
+  Statistics, Census, peer-reviewed journals (JAMA, NEJM, Health
+  Affairs, The Lancet), Mayo Clinic, Cleveland Clinic, American Heart
+  Association, American Cancer Society, Academy of Nutrition and
+  Dietetics.
+  Tier 3, recognized industry and legal analysis: Mercer, Milliman,
+  Segal, WTW, Aon, Business Group on Health, IFEBP, SHRM, PwC Health
+  Research Institute, Insurance Information Institute, NCCI, AM Best,
+  Verisk/ISO, and benefits-law firm client alerts (for example Groom
+  Law Group, Proskauer, Littler, Jackson Lewis); tribal: NIHB, NCAI,
+  Tribal Self-Governance Advisory Committee.
+  Never cite: blogs, vendor or carrier marketing, press-release
+  aggregators, social media, forums, AI-generated content farms, or
+  Wikipedia. A Tier 3 claim about a rule must be confirmed in Tier 1.
+  Survey figures name the survey, publisher, and year.
   Find pages with WebSearch. Read each source with WebFetch; if
   WebFetch fails or is unavailable, use the kit's fetch helper from
   the repository root, which works on sites that refuse automated
