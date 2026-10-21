@@ -1,0 +1,163 @@
+ATRIA CONTENT - DRAFTING INSTRUCTIONS
+(Read by the Atria Content Drafting routine after its date gate.
+Dustin's routine prompt directs every run to follow this file.)
+
+If Topic is blank, choose a topic not already covered. Check the
+folders in 1-Review, 2-Approved, and 3-Published (folder names and
+review.txt files) and atriains.com/blog, and explain the choice in the
+review note.
+
+============================================================
+RULES FOR ALL RUNS
+============================================================
+- Professional, plain advisory tone. No overclaims. Every figure is
+  current and sourced; anything unverifiable goes in the review note,
+  not the content.
+- No client names or data traceable to a client.
+- Tribal-specific content only when the Topic says so.
+- Never send email, publish, or post anything. This task only drafts
+  and saves files.
+
+============================================================
+TRACK A - CLIENT NEWSLETTERS
+============================================================
+Audience: Atria's existing clients. These are NOT prospects.
+- No marketing or prospecting language. Do not invite readers to
+  "take a second look," "switch," "get a quote," or similar.
+- Do not imply Atria has not already done work for the reader.
+- Contact block: (507) 500-8377 | help@atriains.com | atriains.com
+- Build every newsletter with the Atria build kit (see BUILD STEPS).
+  The kit holds the approved layout, palette, fonts, logo, and contact
+  block for each category; only the content changes.
+
+Category rules:
+- Benefits 101 and Well-Being: employee-facing, plain language.
+- Well-Being: short article plus one very healthy recipe (low
+  saturated fat, low sodium, low added sugar) from a public-domain
+  source with a real photo. Put the photo link in the review note.
+- Benefits Buzz and Compliance Corner: HR and CFO audience.
+- Compliance Corner: no payroll items. State content defaults to
+  California. Minnesota or Wisconsin items are allowed only if they
+  meet the same relevance bar and state the specific requirement,
+  who it applies to, the deadline, and a primary source. Be precise
+  about applicability (example: the gag clause attestation is a
+  self-funded plan obligation; carriers attest for fully insured).
+- Prefer primary sources (IRS, DOL, CMS, HHS, USDA, state agencies).
+
+Track A files (prefix every name with YYYY-MM-DD_[Category]_Issue[NN]_
+using the send date). [Category] is hyphenated with no spaces:
+Benefits-101, Well-Being, Compliance-Corner, Benefits-Buzz,
+Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
+1. newsletter.pptx - editable two-page newsletter.
+2. newsletter.pdf  - PDF export of the PPTX.
+3. wordpress.html  - Benefits 101, Benefits Buzz, Well-Being ONLY.
+   Never for Compliance Corner. This becomes a WordPress post that
+   presents the newsletter: same content, same client-facing tone,
+   rebuilt as readable web HTML (headings, sections, the recipe as
+   text for Well-Being), with a "Download the PDF" link line near the
+   top (link left as [PDF LINK] for posting). Write it in Track A
+   tone, not Track B blog style. Follow
+   _Templates/Atria-WordPress-HTML-Template.html exactly.
+4. email.txt  - subject, preview text, short body introducing the PDF.
+5. review.txt - sources with links, figures to double-check, topic
+   rationale, recipe photo link (Well-Being), open questions.
+
+============================================================
+TRACK B - TRADITIONAL PUBLIC BLOG POSTS
+============================================================
+Audience: HR directors and business decision-makers, including
+prospects. Prospect-facing positioning is appropriate here.
+- Match the depth, style, and structure of existing atriains.com
+  posts (read two or three recent ones) and the HTML template.
+- Review atriains.com/blog first to avoid topic overlap.
+- Provocative but constructive. Not critical of other brokers.
+- Close with Atria's value tied to the Four C's (Culture,
+  Communication, Cost, Compliance).
+- No newsletter template, no PPTX, no PDF.
+
+Track B files (prefix with YYYY-MM-DD_BlogPost_ using the post date):
+1. wordpress.html - full post following
+   _Templates/Atria-WordPress-HTML-Template.html exactly: title, image
+   file URL (https://atriains.com/wp-content/uploads/YYYY/MM/[name].png,
+   post-date year and month), floated image block,
+   <h4 style="margin-top:24px;"> headings, Bottom Line, disclaimer.
+2. linkedin.txt - plain-text LinkedIn companion post. Note that the
+   link slug is a best guess until published.
+3. review.txt - sources, topic rationale, overlap check, open questions.
+
+============================================================
+BUILD STEPS (Track A newsletters)
+============================================================
+The design lives in code in this repository (atriains/atria-newsletter-kit),
+which is attached to the routine and cloned as the working repository.
+Do not rebuild layouts by hand and do not edit atria-kit.js; only
+write content. Never commit or push to the repository: keep issue.json
+and all output in a separate folder outside it (~/out/[folder name]/).
+1. From the repository root, run ./setup.sh. If atria-kit.js is not
+   in the working directory, say "Build kit unavailable: repository
+   not attached" in review.txt and the summary, upload the text
+   files, and finish.
+2. Read README.txt in the repository. Copy examples/[layout].json to
+   issue.json and replace the content with this issue's content
+   (layouts: benefits-101, well-being, compliance-corner,
+   benefits-buzz, risk-report). Keep every key and every list length.
+   The examples' facts are from Issue 01; never reuse them unverified.
+3. Run ./build.sh issue.json [output folder]/[file prefix]. This makes
+   newsletter.pptx, newsletter.pdf, and two QA page images.
+4. Open both QA page images and check for overflow, overlap, or
+   cut-off text. Fix by shortening copy in issue.json and rebuild.
+   Never shrink fonts or edit the layout code.
+5. Well-Being: never embed a photo. The PPTX keeps labeled photo
+   frames; put the recipe photo URL in review.txt.
+6. Risk Report uses a provisional layout: flag it in review.txt as a
+   new template awaiting approval.
+7. Write wordpress.html, email.txt, and review.txt from the final
+   issue.json text so all versions match.
+
+The PDF made here is the review copy. If Dustin edits the PPTX during
+review, he re-exports the PDF before moving the folder to 2-Approved,
+so the approved PDF always matches the approved PPTX.
+
+============================================================
+SHAREPOINT LOCATIONS
+============================================================
+Site: Atria (atriains717.sharepoint.com/sites/Atria), Shared Documents
+Base: Atria File Server/Marketing/Newsletters/
+- Atria-Content-Schedule.txt  The schedule. Read-only for this task.
+- _Templates/   Atria-WordPress-HTML-Template.html (follow exactly),
+                reference copies of the approved PPTX designs, and
+                logos. Read-only for this task. The build kit itself
+                is the attached GitHub repository (see BUILD STEPS).
+- 1-Review/     This task writes here, and only here.
+- 2-Approved/   Dustin moves a folder here to approve it. Never write,
+                move, or delete anything in this folder.
+- 3-Published/  Archive after posting/sending. Never write here.
+Newsletters and blog posts share these stage folders; the folder name
+identifies which is which.
+
+============================================================
+STEP 3 - SAVE AND DELIVER
+============================================================
+1. Folder name = the file prefix (YYYY-MM-DD_[Category]_Issue[NN] or
+   YYYY-MM-DD_BlogPost_[short-slug], using the send/post date; TEST_ in
+   front for test rows). Put every deliverable in ~/out/[folder name]/:
+   newsletter.pptx, newsletter.pdf, wordpress.html, email.txt,
+   review.txt (Track A) or wordpress.html, linkedin.txt, review.txt
+   (Track B). Not issue.json, not QA images. Never create .md files.
+2. Upload them all to SharePoint in one command from the repository
+   root:
+     python3 upload.py "[folder name]" ~/out/[folder name]/*
+   It creates 1-Review/[folder name]/ and uploads each file through
+   Microsoft Graph with the Atria uploader credentials in this
+   environment, then prints OK or FAIL per file. Dustin set this up
+   for this task; it writes only to 1-Review and never overwrites.
+3. If any file prints FAIL (or the credentials are missing): upload
+   the text files that failed with the Microsoft 365 connector
+   (sharepoint_upload_file, content parameter) into the same folder,
+   send the PPTX and PDF to the user with SendUserFile, and make the
+   first line of review.txt: "Upload failed for: [files] ([error]).
+   PPTX and PDF are attached to the Claude run for [date]."
+4. Never move, rename, or delete any existing SharePoint item. Never
+   write to 2-Approved or 3-Published.
+5. Finish with a one-paragraph summary, the file list with OK/FAIL,
+   and the link to the 1-Review folder.

@@ -51,3 +51,10 @@ Files
 - logo-color.b64.txt  color logo (light cards)
 - examples/*.json     approved Issue 01 content per category (layout
                       reference; facts must be re-verified before reuse)
+
+Routine files
+- INSTRUCTIONS.txt    full drafting rules; the routine prompt points here,
+                      so rule changes ship by pushing this file
+- upload.py           uploads finished files to SharePoint 1-Review via
+                      Microsoft Graph (needs ATRIA_TENANT_ID,
+                      ATRIA_CLIENT_ID, ATRIA_CLIENT_SECRET)
