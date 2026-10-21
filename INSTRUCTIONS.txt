@@ -33,6 +33,13 @@ RULES FOR ALL RUNS
   not the content.
 - No client names or data traceable to a client.
 - Tribal-specific content only when the Topic says so.
+- Research: use the WebSearch and WebFetch tools, not curl. Some
+  government sites (healthcare.gov in particular) refuse automated
+  fetches; when one does, confirm the same rule from another primary
+  source (eCFR, Federal Register, irs.gov, dol.gov, cms.gov) or a
+  search-result excerpt, and name the source you actually verified
+  against in review.txt. Only mark a claim UNVERIFIED after trying at
+  least two sources.
 - Never send email, publish, or post anything. This task only drafts
   and saves files.
 
