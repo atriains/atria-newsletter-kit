@@ -1,0 +1,63 @@
+{
+  "layout": "benefits-101",
+  "category": "Benefits 101",
+  "issue": "01",
+  "issueTitle": "Know Your Numbers",
+  "headline": [
+    {"text": "Why did that "}, {"text": "$10,000", "accent": true}, {"text": " surgery cost you "}, {"text": "$3,200?", "accent": true}
+  ],
+  "subhead": "Four terms on your benefits summary shape most of what you pay. Here’s how they work, then follow one employee’s year to see them in action.",
+  "heroCard": {
+    "title": "Your plan", "subtitle": "Sample in-network costs",
+    "rows": [["Deductible", "$1,500"], ["Office copay", "$30"], ["Coinsurance", "20%"], ["Out-of-pocket max", "$4,000"]]
+  },
+  "section1": {
+    "title": "The four terms to know first",
+    "lead": "You’ll see them on every benefits summary. Here’s what each one actually means for your wallet.",
+    "cards": [
+      {"icon": "FaDoorOpen", "label": "Deductible", "title": "Your entry fee", "body": "What you pay each plan year before your plan starts splitting the cost of care."},
+      {"icon": "FaTag", "label": "Copay", "title": "The flat fee", "body": "A set price for common services, like $30 for an office visit or $15 for a generic prescription."},
+      {"icon": "FaChartPie", "label": "Coinsurance", "title": "Your share of the tab", "body": "After the deductible, you pay a percentage, like 20%, and the plan covers the rest."},
+      {"icon": "FaShieldAlt", "label": "Out-of-pocket max", "title": "Your safety net", "body": "The most you’ll pay in a plan year for covered in-network care. Hit it, and the plan pays 100%."}
+    ]
+  },
+  "story": {
+    "title": "Follow one employee’s year",
+    "initial": "J",
+    "introBold": "Meet Jordan.",
+    "intro": "Jordan’s plan has a $1,500 deductible, 20% coinsurance, a $30 office copay, and a $4,000 out-of-pocket max. All care is in network.",
+    "timeline": [
+      {"when": "March", "amount": "$60", "event": "Two office visits", "detail": "Two $30 copays."},
+      {"when": "June", "amount": "$3,200", "event": "Outpatient surgery", "detail": "$1,500 deductible + 20% of the remaining $8,500."},
+      {"when": "September", "amount": "$740", "event": "An MRI", "detail": "20% would be $800, but Jordan hits the max first."},
+      {"when": "Oct – Dec", "amount": "$0", "event": "Everything else", "detail": "The plan pays 100% of covered in-network care."}
+    ],
+    "meter": {
+      "label": "Jordan’s out-of-pocket maximum meter", "maxLabel": "Max reached: $4,000", "max": 4000,
+      "segments": [{"value": 60, "label": ""}, {"value": 3200, "label": "$3,200 surgery"}, {"value": 740, "label": "$740 MRI"}]
+    },
+    "stats": [
+      {"label": "Jordan paid", "value": "$4,000", "desc": "for the entire plan year"},
+      {"label": "The plan paid", "value": "$10,060", "desc": "for the surgery and MRI alone"}
+    ]
+  },
+  "headsUp": {
+    "title": "Heads up: these don’t count toward your max",
+    "items": [
+      {"icon": "FaMoneyBillWave", "title": "Premiums", "body": "The amount taken from your paycheck for coverage."},
+      {"icon": "FaBan", "title": "Non-covered care", "body": "Services your plan excludes, like most cosmetic procedures."},
+      {"icon": "FaMapMarkedAlt", "title": "Out-of-network extras", "body": "May have a separate limit, plus any amount billed above what your plan allows."}
+    ]
+  },
+  "gamePlan": {
+    "title": "Your 4-step game plan",
+    "steps": [
+      {"bold": "Find your numbers.", "text": "Your Summary of Benefits and Coverage lists them all."},
+      {"bold": "Stay in network.", "text": "Out-of-network care may have a higher limit, or none."},
+      {"bold": "Use preventive care.", "text": "Most plans cover in-network checkups and screenings at $0."},
+      {"bold": "Plan big expenses.", "text": "Check prior authorization, and whether an HSA or FSA can help."}
+    ]
+  },
+  "contact": {"title": "Need help? Call Atria.", "body": "Stuck on a claim, a surprise bill, or a coverage question? Our team will work through it with you."},
+  "disclaimer": "*On many plans, copays don’t count toward the deductible but do count toward the out-of-pocket max; high-deductible plans work differently. Figures are illustrative. For informational purposes only; not legal or tax advice."
+}

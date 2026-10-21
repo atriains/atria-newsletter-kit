@@ -1,0 +1,56 @@
+{
+  "layout": "well-being",
+  "category": "Well-Being",
+  "issue": "01",
+  "issueTitle": "Small Moves, Big Wins",
+  "headline": [{"text": "Too busy to exercise? ", "br": true}, {"text": "Every minute counts.", "accent": true}],
+  "subhead": "You don’t need a gym or a free hour. Short bursts of movement add up, and they fit into a real workday.",
+  "sticker": {"big": "150", "small": "minutes a week\nis the goal"},
+  "article": {
+    "title": "Why short bursts count",
+    "paragraphs": [
+      "U.S. physical activity guidelines recommend at least 150 minutes of moderate activity a week, about 22 minutes a day, plus muscle-strengthening activity two days a week. The good news: it doesn’t have to happen all at once.",
+      "The current guidelines dropped the old rule that activity had to come in 10-minute blocks to count. A brisk walk to the mailbox, a few flights of stairs, or a quick set of squats all add up.",
+      "Short movement breaks also interrupt the long stretches of sitting that come with many jobs. Getting up once an hour can ease stiffness and give your energy a lift."
+    ],
+    "closingBold": "Start small.",
+    "closing": "Pick one movement snack and attach it to something you already do every day. Once it sticks, add another."
+  },
+  "quote": {"text": "Some physical activity is better than none.", "source": "Physical Activity Guidelines for Americans"},
+  "sideCard": {
+    "title": "Try a movement snack",
+    "subtitle": "Pick one. Pair it with something you already do.",
+    "items": [
+      {"icon": "FaShoePrints", "text": "Take the stairs instead of the elevator"},
+      {"icon": "FaPhoneAlt", "text": "Walk during one phone call a day"},
+      {"icon": "FaClock", "text": "Stand and stretch at the top of every hour"},
+      {"icon": "FaCoffee", "text": "Do 10 squats while your coffee brews"},
+      {"icon": "FaCar", "text": "Park at the far end of the lot"}
+    ],
+    "note": "Talk with your doctor before starting a new exercise routine."
+  },
+  "recipe": {
+    "kicker": "On the menu",
+    "name": "Three Sisters Stew",
+    "description": "A hearty one-pot stew of beans, corn, and squash that’s even better the next day.",
+    "meta": [{"icon": "FaUserFriends", "text": "Serves 6"}, {"icon": "FaUtensils", "text": "1¼-cup servings"}, {"icon": "FaClock", "text": "About 1 hour"}, {"icon": "FaLeaf", "text": "One pot"}],
+    "nutrition": [{"value": "231", "label": "calories"}, {"value": "1.3 g", "label": "sat fat"}, {"value": "236 mg", "label": "sodium"}, {"value": "0 g", "label": "added sugar"}],
+    "ingredients": ["½ lb ground beef", "1 cup diced onion", "3 cups water", "3 cups cubed red potatoes", "2 tomatoes, diced", "1 can (15 oz) no-salt-added tomato sauce", "½ cup frozen corn", "½ cup diced yellow squash", "½ cup diced zucchini", "½ can low-sodium kidney beans, drained", "½ can low-sodium black beans", "¼ cup quick-cooking oats", "2 garlic cloves, finely chopped", "¼ tsp black pepper", "¼ tsp salt"],
+    "steps": [
+      "Brown the beef and onions in a skillet over medium-high heat for 8 to 10 minutes, until the beef reaches 160°F. Drain the fat.",
+      "In a large pot, combine the beef, water, and potatoes. Bring to a boil and cook for 15 minutes.",
+      "Add all of the remaining ingredients and return the pot to a boil.",
+      "Lower the heat and simmer for about 25 minutes.",
+      "Serve hot. Leftovers make an easy lunch the next day."
+    ],
+    "note": "Why “Three Sisters”? Corn, beans, and squash have been grown together for generations, each helping the others thrive.",
+    "swaps": [
+      {"bold": "Meatless:", "text": "skip the beef and add the rest of both cans of beans."},
+      {"bold": "Pantry swap:", "text": "low-sodium canned potatoes or carrots work too."},
+      {"bold": "Leftovers:", "text": "refrigerate within 2 hours; eat within 3 to 4 days."}
+    ],
+    "photoUrl": "https://storage.googleapis.com/peppermint-cdn/myplate.food-recipe-images/three-sisters-stew.jpg"
+  },
+  "contact": {"title": "Questions about your benefits?"},
+  "disclaimer": "Recipe: USDA MyPlate Kitchen (public domain), adapted from the USDA Food Distribution Program on Indian Reservations. Photo: MyPlate.food. General wellness information only; not medical advice. Check ingredients for allergies and talk with your doctor about changes to diet or exercise."
+}

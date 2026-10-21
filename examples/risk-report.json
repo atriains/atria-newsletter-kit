@@ -1,0 +1,128 @@
+{
+  "layout": "risk-report",
+  "category": "Risk Report",
+  "issue": "01",
+  "issueTitle": "[LAYOUT SAMPLE - P&C content goes here]",
+  "headline": [
+    {
+      "text": "Sample P&C headline with an "
+    },
+    {
+      "text": "accent.",
+      "accent": true
+    }
+  ],
+  "subhead": "Most employers are bracing for another big renewal. Here’s what’s driving it, and the levers that work beyond raising deductibles.",
+  "heroCard": {
+    "title": "2027 renewal outlook",
+    "subtitle": "Average projected cost increase per employee",
+    "bars": [
+      {
+        "label": "If employers change nothing",
+        "value": 11.0,
+        "display": "11.0%"
+      },
+      {
+        "label": "After plan changes",
+        "value": 8.2,
+        "display": "8.2%"
+      }
+    ],
+    "source": "Source: national employer survey, 2026"
+  },
+  "section1": {
+    "title": "What’s driving the increase",
+    "lead": "National surveys point to the same handful of forces. Most of them are outside any one employer’s control, but not all.",
+    "cards": [
+      {
+        "icon": "FaSyringe",
+        "label": "Specialty drugs",
+        "title": "GLP-1s and beyond",
+        "body": "Rising GLP-1 use alone is estimated to add about a full percentage point to 2027 cost growth, alongside autoimmune and cancer therapies."
+      },
+      {
+        "icon": "FaHeartbeat",
+        "label": "High-cost claims",
+        "title": "The big claims got bigger",
+        "body": "Catastrophic claims were the most-cited driver of 2027 increases in one national employer survey, ahead of specialty drugs."
+      },
+      {
+        "icon": "FaHospital",
+        "label": "Provider prices",
+        "title": "Bigger systems, bigger bills",
+        "body": "Health system consolidation and lower government reimbursement are pushing higher prices onto employer plans."
+      },
+      {
+        "icon": "FaChartLine",
+        "label": "Doing nothing",
+        "title": "The status quo is expensive",
+        "body": "Employers estimate their current plans would cost about 11% more in 2027 if they made no changes at all."
+      }
+    ]
+  },
+  "levers": {
+    "title": "Levers that work beyond raising deductibles",
+    "items": [
+      {
+        "icon": "FaLayerGroup",
+        "title": "Rethink the funding model",
+        "body": "Level-funded, self-funded, and captive arrangements can return surplus and give you the claims data a fully insured plan rarely shares."
+      },
+      {
+        "icon": "FaPrescriptionBottleAlt",
+        "title": "Put pharmacy under a microscope",
+        "body": "Pharmacy is about a quarter of spend for many large employers. Transparent pricing, specialty programs, and biosimilars add up."
+      },
+      {
+        "icon": "FaPills",
+        "title": "Set a clear GLP-1 policy",
+        "body": "Decide coverage on purpose: clinical criteria, prior authorization, and pairing coverage with lifestyle support."
+      },
+      {
+        "icon": "FaUserShield",
+        "title": "Manage the high-cost claims",
+        "body": "Strong stop-loss terms, early case management, and centers of excellence for complex care protect the budget."
+      },
+      {
+        "icon": "FaSlidersH",
+        "title": "Design to steer, not just shift",
+        "body": "Lower cost-sharing for high-value care and preferred sites can save more than raising the deductible for everyone."
+      },
+      {
+        "icon": "FaDatabase",
+        "title": "Know your data",
+        "body": "You can’t manage what you can’t see. Claims and pharmacy reporting belong in every renewal conversation."
+      }
+    ]
+  },
+  "stats": [
+    {
+      "value": "59%",
+      "label": "of employers plan cost-cutting changes for 2027"
+    },
+    {
+      "value": "~1 pt",
+      "label": "of 2027 cost growth attributed to rising GLP-1 use"
+    },
+    {
+      "value": "84%",
+      "label": "of large employers plan to offer at least one center of excellence"
+    }
+  ],
+  "questions": {
+    "title": "Renewal meeting questions",
+    "items": [
+      "How much of our increase is market trend, and how much is our own claims?",
+      "Do we receive claims and pharmacy data, and in what detail?",
+      "Would a different funding model fit us now or in the next few years?",
+      "What are our stop-loss terms, and what’s excluded?",
+      "How is our pharmacy priced, and who keeps the rebates?",
+      "What’s our three-year plan?"
+    ]
+  },
+  "contact": {
+    "title": "Questions about your 2027 renewal?",
+    "body": "Your Atria team is here to walk through your increase, your data, and your options with you."
+  },
+  "disclaimer": "Sources: Marsh, 2026 National Survey of Employer-Sponsored Health Plans (preliminary results); Business Group on Health, 2027 Employer Healthcare Strategy Survey; International Foundation of Employee Benefit Plans, 2027 Cost Trend Pulse Survey. This article is for informational purposes only and should not be considered legal or tax advice."
+}

@@ -1,0 +1,4 @@
+node_modules/
+*.pdf
+*.pptx
+*_qa-page*

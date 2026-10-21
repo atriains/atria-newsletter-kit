@@ -1,0 +1,56 @@
+{
+  "layout": "compliance-corner",
+  "category": "Compliance Corner",
+  "issue": "01",
+  "issueTitle": "Year-End Ready",
+  "headline": [{"text": "New year, new limits. Is your plan ready for "}, {"text": "2027?", "accent": true}],
+  "subhead": "Most 2027 benefit limits are final. Here’s what changed, what’s still pending, and the dates your team should have on the calendar.",
+  "heroCalendar": {"month": "January 2027", "day": "1", "caption": "New limits take effect for calendar-year plans"},
+  "numbers": {
+    "title": "The 2027 numbers at a glance",
+    "lead": "Final figures from the IRS and HHS for plan years beginning in 2027, with 2026 for comparison.",
+    "tiles": [
+      {"icon": "FaShieldAlt", "label": "ACA out-of-pocket max", "value": "$12,000", "sub": "self-only · $24,000 family", "prior": "Up from $10,600 / $21,200"},
+      {"icon": "FaPercent", "label": "ACA affordability", "value": "10.22%", "sub": "of household income", "prior": "Up from 9.96%"},
+      {"icon": "FaPiggyBank", "label": "HSA contribution", "value": "$4,500", "sub": "self-only · $9,000 family", "prior": "$1,000 catch-up at 55+ (unchanged)"},
+      {"icon": "FaArrowDown", "label": "HDHP minimum deductible", "value": "$1,750", "sub": "self-only · $3,500 family", "prior": "Up from $1,700 / $3,400"},
+      {"icon": "FaBalanceScale", "label": "HDHP out-of-pocket max", "value": "$8,700", "sub": "self-only · $17,400 family", "prior": "Up from $8,500 / $17,000"},
+      {"icon": "FaHourglassHalf", "label": "Health FSA", "value": "Pending", "sub": "IRS release expected late fall", "prior": "2026 limit: $3,400"}
+    ]
+  },
+  "watchOut": {"bold": "Two limits, one plan.", "text": "HSA-qualified plans must stay under the lower IRS out-of-pocket limits, not just the ACA maximum. And any family plan with an out-of-pocket max above $12,000 needs an embedded individual limit of $12,000 or less."},
+  "calendar": {
+    "title": "Your compliance calendar",
+    "rows": [
+      {"when": "Now – Dec 31", "title": "Lock in 2027 plan designs", "detail": "Check out-of-pocket maximums, HDHP limits, and employee contributions against the new numbers."},
+      {"when": "Now – Dec 31", "title": "Line up ACA e-filing", "detail": "If you file your own Forms 1094-C / 1095-C, IRS e-file credentials can take weeks to obtain. Confirm your vendor or apply now, not in January."},
+      {"when": "Open enrollment", "title": "Distribute SBCs and annual notices", "detail": "Include the Summary of Benefits and Coverage and required notices with enrollment materials."},
+      {"when": "Dec 31, 2026", "title": "Gag clause attestation (self-funded plans)", "detail": "Carriers attest for fully insured plans. Self-funded plans file through the CMS portal, or get written confirmation that the TPA files for them."},
+      {"when": "Jan 31, 2027", "title": "California statements (self-funded plans)", "detail": "Furnish Forms 1095-B or 1095-C to enrolled California residents. This is earlier than the federal date, and the federal “available on request” option may not satisfy California."},
+      {"when": "Mar 2, 2027", "title": "Furnish Forms 1095-C", "detail": "Mail them, or post a notice that forms are available on request."},
+      {"when": "Early Mar 2027", "title": "CMS creditable coverage disclosure", "detail": "Due within 60 days of the plan year start for plans that offer prescription drug coverage."},
+      {"when": "Mar 31, 2027", "title": "E-file Forms 1094-C / 1095-C", "detail": "Electronic filing deadline with the IRS. Self-funded plans covering California residents also file with the Franchise Tax Board."}
+    ]
+  },
+  "lawChanges": {
+    "title": "Already in effect: 2026 law changes",
+    "items": [
+      {"icon": "FaLaptopMedical", "title": "Telehealth", "body": "HDHPs can cover telehealth before the deductible without affecting HSA eligibility, now permanently."},
+      {"icon": "FaUserMd", "title": "Direct primary care", "body": "Qualifying arrangements no longer block HSA eligibility if fees stay under monthly limits."},
+      {"icon": "FaChild", "title": "Dependent care FSA", "body": "The annual limit rose to $7,500, up from $5,000."},
+      {"icon": "FaStore", "title": "Bronze plans", "body": "Bronze and catastrophic Marketplace plans now count as HSA-compatible."}
+    ]
+  },
+  "checklist": {
+    "title": "Your year-end checklist",
+    "items": [
+      "Confirm in-network out-of-pocket maximums, including embedded individual limits, are within $12,000 / $24,000.",
+      "Confirm HSA-qualified plans meet the 2027 IRS deductible and out-of-pocket limits.",
+      "Test employee contributions against the 10.22% affordability threshold.",
+      "Update plan documents and employee materials for 2027 HSA limits, and watch for the FSA limit.",
+      "Name one owner for your annual notice calendar, plus a backup."
+    ]
+  },
+  "contact": {"title": "Questions about your plan’s compliance?", "body": "Our team can review your 2027 plan designs, notices, and reporting with you."},
+  "disclaimer": "Figures current as of October 2026 and subject to change. Deadlines shown are for calendar-year plans and 2026 reporting. This article is for informational purposes only and should not be considered legal or tax advice."
+}
