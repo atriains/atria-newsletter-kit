@@ -16,6 +16,7 @@ const path = require('path');
 const zlib = require('zlib');
 const pptxgen = require('pptxgenjs');
 const JSZip = require('jszip');
+const makePage2 = require('./page2.js');
 const FA = JSON.parse(fs.readFileSync(path.join(__dirname, 'icons-fa.json'), 'utf8'));
 const CRC = Array.from({ length: 256 }, (_, n) => { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; return c >>> 0; });
 const crc32 = (b) => { let c = 0xffffffff; for (const x of b) c = CRC[(c ^ x) & 255] ^ (c >>> 8); return (c ^ 0xffffffff) >>> 0; };
@@ -152,6 +153,7 @@ async function benefits101(pres, P, c) {
   }
   // page 2
   const s2 = pres.addSlide(); s2.background = { color: P.bg2 };
+  if (c.page2) return makePage2({ pres, P, C, icon, consts: { WHITE, AMBER, AMBER_T, AMBER_D, NUM } })(s2, c.page2, req(c, 'disclaimer', 'content'));
   const tile = (x, y, w, h, fill, n) => rr(s2, { x, y, w, h, rectRadius: 0.2, fill: { color: fill }, shadow: C.shadow() }, n);
   const st = req(c, 'story', 'benefits-101');
   tile(0.5, 0.5, 7.5, 3.95, WHITE, 'Tile-02'); C.tab(s2, 0.8, 0.78, '02', st.title);

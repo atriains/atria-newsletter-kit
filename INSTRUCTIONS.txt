@@ -91,18 +91,28 @@ labeled lines:
   Excerpt: [one or two sentences]
   Category: [Benefits 101 | Benefits Buzz | Well-Being | Blog]
   Featured image file: [kebab-name]-featured.png
-  Featured image prompt: [what the image should show; realistic,
-    professional, no text in the image, no logos, no identifiable
-    real people; landscape 1200x628]
+  Featured image prompt: [a detailed art-direction brief, 60-120 words]
+  Mid-article image prompt: [same standard, its own scene]
   Featured image alt text: [plain description]
   Mid-article image file: [kebab-name].png  (must match the src in
     wordpress.html: https://atriains.com/wp-content/uploads/YYYY/MM/
     [kebab-name].png, YYYY/MM = send/post date)
-  Mid-article image prompt: [what it should show; same rules; roughly
-    square, at least 600x600]
   Mid-article image alt text: [must match the alt in wordpress.html,
     and describe what the prompt asks for; if the prompt has no
     people, the alt text has no people]
+  Image standard for both prompts: write them so an image generator
+    produces a beautiful, clean, crisp, professional image that matches
+    the quality of the article. Healthcare or topic-related subject
+    matter, described concretely: the setting, the objects, the
+    composition and camera angle, lighting, depth of field, and a calm
+    palette that sits well beside Atria's navy, teal, and green
+    (whites, soft blues, natural wood, plants). Editorial photography
+    or refined 3D/flat illustration, never cartoonish or stock-cliche.
+    Prefer objects and settings; include people only when the topic
+    truly needs them, and then never real or identifiable people (no
+    faces in close-up, no celebrities). No text, numbers, logos, or
+    brand names in the image. State the aspect ratio: featured 1200x628
+    landscape; mid-article square, at least 800x800.
   PDF link: [PDF LINK] is in wordpress.html (Track A only); replace it
     with the uploaded PDF's media URL.
 
@@ -149,12 +159,13 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
    tone, not Track B blog style. Follow WORDPRESS FILES above, and
    write wordpress-post.txt with it.
 4. email.txt  - subject, preview text, short body introducing the PDF.
-   Written to the client's HR or benefits contact, who forwards it:
-   one line on why it matters to their employees now, a short summary,
-   and an offer to help. Benefits 101 and Well-Being bodies must read
-   well if forwarded to employees as-is. Never say "this month's" or
-   imply a fixed cadence. End with this line and no name or sign-off
-   (Dustin's Outlook signature is added when he sends):
+   Audience matches the piece: Benefits 101 and Well-Being emails are
+   written for employees, in the same plain, friendly voice as the
+   newsletter. Benefits Buzz, Compliance Corner, and Risk Report
+   emails are written for HR, finance, and operations leaders. Never
+   say "this month's" or imply a fixed cadence. End with this line and
+   no name or sign-off (Dustin's Outlook signature is added when he
+   sends):
      Questions? (507) 500-8377 | help@atriains.com
 5. review.txt - sources with links, figures to double-check, topic
    rationale, recipe photo link (Well-Being), open questions.
@@ -194,6 +205,22 @@ and all output in a separate folder outside it (~/out/[folder name]/).
    script. If atria-kit.js is not in the working directory, say
    "Build kit unavailable: repository not attached" in review.txt and
    the summary, upload the text files, and finish.
+DESIGN CONSISTENCY AND VARIETY
+- Page 1 never changes structure: masthead, gradient hero with the
+  headline and subhead, the hero card (the receipt on Benefits 101,
+  with four rows), and the page 1 section in its fixed position. Only
+  the words and numbers change.
+- Benefits 101 page 2 is composed per issue with a "page2" block list
+  (see README.txt and examples/benefits-101-flex.json): story,
+  stats, callout, checklist, contact, mythfact, compare, qa, cards,
+  text. Pick the blocks that best teach this topic and arrange them
+  differently from the last Benefits 101 issue in the content log.
+  Exactly one contact block, always in the last row. Colors, fonts,
+  rounded tiles, chips, and numbered tabs stay the same; only the
+  selection and arrangement change. Add the blocks used to the log's
+  "Example or persona used" column, e.g. "Priya; p2: mythfact, compare,
+  stats, checklist+contact".
+- Other categories keep their fixed page 2 for now.
 2. Read README.txt in the repository. Copy examples/[layout].json to
    issue.json and replace the content with this issue's content
    (layouts: benefits-101, well-being, compliance-corner,

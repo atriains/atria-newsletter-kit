@@ -62,3 +62,14 @@ Routine files
                       ATRIA_CLIENT_ID, ATRIA_CLIENT_SECRET)
 - fetch.py            reads government pages, PDFs, eCFR sections, and
                       Federal Register searches as text for source checks
+
+Flexible page 2 (Benefits 101)
+- Add "page2": [rows] to issue.json to compose page 2 from blocks; the
+  fixed page 2 keys (story, headsUp, gamePlan, contact) are then ignored.
+- A row is one block or an array of blocks; widths full | half | wide
+  (2/3) | narrow (1/3) must add to one page width.
+- Blocks: story, stats, callout, checklist, contact (exactly one),
+  mythfact, compare, qa, cards, text. Fields are listed at the top of
+  page2.js; see examples/benefits-101-flex.json.
+- If the blocks don't fit, the build stops with "page2 overflows by X
+  in": shorten copy or drop a block, then rebuild and check the QA image.
