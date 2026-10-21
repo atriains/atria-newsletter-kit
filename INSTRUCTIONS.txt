@@ -153,9 +153,9 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
    one line on why it matters to their employees now, a short summary,
    and an offer to help. Benefits 101 and Well-Being bodies must read
    well if forwarded to employees as-is. Never say "this month's" or
-   imply a fixed cadence. Sign off exactly:
-     The Atria Team
-     (507) 500-8377 | help@atriains.com | atriains.com
+   imply a fixed cadence. End with this line and no name or sign-off
+   (Dustin's Outlook signature is added when he sends):
+     Questions? (507) 500-8377 | help@atriains.com
 5. review.txt - sources with links, figures to double-check, topic
    rationale, recipe photo link (Well-Being), open questions.
 
