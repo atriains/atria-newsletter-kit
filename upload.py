@@ -8,8 +8,9 @@ Needs three environment variables (set in the Claude cloud environment):
 for the Entra app "Atria Newsletter Uploader" (Graph application
 permission Sites.Selected, granted write on the Atria site only).
 
-Creates the folder if needed. Never overwrites: an existing file with the
-same name makes that upload fail. Exit code 0 only if every file uploaded.
+Never overwrites anything: if 1-Review/<folder>/ already exists, it uploads
+into <folder>_v2 (then _v3, ...) instead and prints the folder it used.
+Exit code 0 only if every file uploaded.
 """
 import json, os, sys, urllib.parse, urllib.request, urllib.error
 
@@ -28,6 +29,27 @@ def token():
     req = urllib.request.Request(f"https://login.microsoftonline.com/{t}/oauth2/v2.0/token", data=body)
     with urllib.request.urlopen(req, timeout=60) as r:
         return json.load(r)["access_token"]
+
+
+def exists(tok, rel):
+    url = (f"https://graph.microsoft.com/v1.0/drives/{DRIVE}/root:/"
+           f"{urllib.parse.quote(rel)}")
+    req = urllib.request.Request(url, headers={"Authorization": f"Bearer {tok}"})
+    try:
+        with urllib.request.urlopen(req, timeout=60):
+            return True
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            return False
+        raise
+
+
+def free_folder(tok, folder):
+    name, n = folder, 1
+    while exists(tok, f"{BASE}/{name}"):
+        n += 1
+        name = f"{folder}_v{n}"
+    return name
 
 
 def put(tok, folder, path):
@@ -53,6 +75,8 @@ def main():
         sys.exit(__doc__)
     folder, files = sys.argv[1], sys.argv[2:]
     tok = token()
+    folder = free_folder(tok, folder)
+    print(f"FOLDER 1-Review/{folder}")
     failed = 0
     for f in files:
         try:

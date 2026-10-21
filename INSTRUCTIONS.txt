@@ -245,7 +245,10 @@ STEP 3 - SAVE AND DELIVER
 2. Upload them all to SharePoint in one command from the repository
    root:
      python3 upload.py "[folder name]" ~/out/[folder name]/*
-   It creates 1-Review/[folder name]/ and uploads each file through
+   It never overwrites: if that folder already exists it uses
+   [folder name]_v2 (then _v3, ...) and prints the folder it used on
+   the FOLDER line; report that folder in the summary.
+   It creates the folder and uploads each file through
    Microsoft Graph with the Atria uploader credentials in this
    environment, then prints OK or FAIL per file. Dustin set this up
    for this task; it writes only to 1-Review and never overwrites.
