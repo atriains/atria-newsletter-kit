@@ -49,7 +49,9 @@ using the send date). [Category] is hyphenated with no spaces:
 Benefits-101, Well-Being, Compliance-Corner, Benefits-Buzz,
 Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
 1. newsletter.pptx - editable two-page newsletter.
-2. newsletter.pdf  - PDF export of the PPTX.
+2. (no PDF upload) Dustin edits the PPTX and exports the final PDF
+   himself in PowerPoint during review. The kit still builds a PDF,
+   but only to make the QA page images; never upload it.
 3. wordpress.html  - Benefits 101, Benefits Buzz, Well-Being ONLY.
    Never for Compliance Corner. This becomes a WordPress post that
    presents the newsletter: same content, same client-facing tone,
@@ -114,9 +116,11 @@ and all output in a separate folder outside it (~/out/[folder name]/).
 7. Write wordpress.html, email.txt, and review.txt from the final
    issue.json text so all versions match.
 
-The PDF made here is the review copy. If Dustin edits the PPTX during
-review, he re-exports the PDF before moving the folder to 2-Approved,
-so the approved PDF always matches the approved PPTX.
+REVIEW AND APPROVAL (Dustin's steps, for reference)
+Dustin edits the PPTX in 1-Review, exports
+[prefix]_newsletter.pdf from PowerPoint into the same folder, and moves
+the folder to 2-Approved. The approved PDF is always his PowerPoint
+export. Downstream posting and email use that PDF, not the PPTX.
 
 ============================================================
 SHAREPOINT LOCATIONS
@@ -141,9 +145,12 @@ STEP 3 - SAVE AND DELIVER
 1. Folder name = the file prefix (YYYY-MM-DD_[Category]_Issue[NN] or
    YYYY-MM-DD_BlogPost_[short-slug], using the send/post date; TEST_ in
    front for test rows). Put every deliverable in ~/out/[folder name]/:
-   newsletter.pptx, newsletter.pdf, wordpress.html, email.txt,
-   review.txt (Track A) or wordpress.html, linkedin.txt, review.txt
-   (Track B). Not issue.json, not QA images. Never create .md files.
+   newsletter.pptx, wordpress.html, email.txt, review.txt (Track A;
+   no PDF) or wordpress.html, linkedin.txt, review.txt
+   (Track B). Not the kit's PDF, not issue.json, not QA images.
+   Never create .md files. Track A review.txt starts with: "Review:
+   edit the PPTX, then File > Export > PDF into this folder as
+   [prefix]_newsletter.pdf before moving the folder to 2-Approved."
 2. Upload them all to SharePoint in one command from the repository
    root:
      python3 upload.py "[folder name]" ~/out/[folder name]/*
@@ -154,9 +161,9 @@ STEP 3 - SAVE AND DELIVER
 3. If any file prints FAIL (or the credentials are missing): upload
    the text files that failed with the Microsoft 365 connector
    (sharepoint_upload_file, content parameter) into the same folder,
-   send the PPTX and PDF to the user with SendUserFile, and make the
-   first line of review.txt: "Upload failed for: [files] ([error]).
-   PPTX and PDF are attached to the Claude run for [date]."
+   send the PPTX to the user with SendUserFile, and make the first
+   line of review.txt: "Upload failed for: [files] ([error]). The
+   PPTX is attached to the Claude run for [date]."
 4. Never move, rename, or delete any existing SharePoint item. Never
    write to 2-Approved or 3-Published.
 5. Finish with a one-paragraph summary, the file list with OK/FAIL,
