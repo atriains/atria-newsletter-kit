@@ -77,6 +77,34 @@ RULES FOR ALL RUNS
   and saves files.
 
 ============================================================
+WORDPRESS FILES (Track A posts and every Track B post)
+wordpress.html holds ONLY the HTML that gets pasted into the WordPress
+Code Editor: it starts with the first <p> and ends with the disclaimer
+<p>. No title line, no image-URL line, no labels, no comments other
+than "<!-- Floated mid-article image -->", no <html>, <head>, <body>,
+or <h1>-<h3>. Same markup and style as the posts Dustin has pasted
+for years (see _Templates/Atria-WordPress-HTML-Template.html).
+wordpress-post.txt holds everything else WordPress needs, as plain
+labeled lines:
+  Title: [post title]
+  Slug: [suggested-url-slug]
+  Excerpt: [one or two sentences]
+  Category: [Benefits 101 | Benefits Buzz | Well-Being | Blog]
+  Featured image file: [kebab-name]-featured.png
+  Featured image prompt: [what the image should show; realistic,
+    professional, no text in the image, no logos, no identifiable
+    real people; landscape 1200x628]
+  Featured image alt text: [plain description]
+  Mid-article image file: [kebab-name].png  (must match the src in
+    wordpress.html: https://atriains.com/wp-content/uploads/YYYY/MM/
+    [kebab-name].png, YYYY/MM = send/post date)
+  Mid-article image prompt: [what it should show; same rules; roughly
+    square, at least 600x600]
+  Mid-article image alt text: [must match the alt in wordpress.html]
+  PDF link: [PDF LINK] is in wordpress.html (Track A only); replace it
+    with the uploaded PDF's media URL.
+
+============================================================
 TRACK A - CLIENT NEWSLETTERS
 ============================================================
 Audience: Atria's existing clients. These are NOT prospects.
@@ -116,8 +144,8 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
    rebuilt as readable web HTML (headings, sections, the recipe as
    text for Well-Being), with a "Download the PDF" link line near the
    top (link left as [PDF LINK] for posting). Write it in Track A
-   tone, not Track B blog style. Follow
-   _Templates/Atria-WordPress-HTML-Template.html exactly.
+   tone, not Track B blog style. Follow WORDPRESS FILES above, and
+   write wordpress-post.txt with it.
 4. email.txt  - subject, preview text, short body introducing the PDF.
 5. review.txt - sources with links, figures to double-check, topic
    rationale, recipe photo link (Well-Being), open questions.
@@ -136,11 +164,10 @@ prospects. Prospect-facing positioning is appropriate here.
 - No newsletter template, no PPTX, no PDF.
 
 Track B files (prefix with YYYY-MM-DD_BlogPost_ using the post date):
-1. wordpress.html - full post following
-   _Templates/Atria-WordPress-HTML-Template.html exactly: title, image
-   file URL (https://atriains.com/wp-content/uploads/YYYY/MM/[name].png,
-   post-date year and month), floated image block,
-   <h4 style="margin-top:24px;"> headings, Bottom Line, disclaimer.
+1. wordpress.html and wordpress-post.txt - per WORDPRESS FILES above:
+   floated image block, <h4 style="margin-top:24px;"> headings,
+   Bottom Line, disclaimer; title and image details in
+   wordpress-post.txt.
 2. linkedin.txt - plain-text LinkedIn companion post. Note that the
    link slug is a best guess until published.
 3. review.txt - sources, topic rationale, overlap check, open questions.
@@ -205,8 +232,10 @@ STEP 3 - SAVE AND DELIVER
    front for test rows). Put every deliverable in ~/out/[folder name]/,
    and name each file with the full prefix, exactly:
      [folder name]_newsletter.pptx, [folder name]_wordpress.html,
+     [folder name]_wordpress-post.txt (not for Compliance Corner),
      [folder name]_email.txt, [folder name]_review.txt (Track A; no PDF)
-   or [folder name]_wordpress.html, [folder name]_linkedin.txt,
+   or [folder name]_wordpress.html, [folder name]_wordpress-post.txt,
+     [folder name]_linkedin.txt,
      [folder name]_review.txt
    (Track B). Not the kit's PDF, not issue.json, not QA images.
    Never create .md files. Track A review.txt starts with: "Review:
