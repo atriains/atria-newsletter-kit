@@ -2,10 +2,28 @@ ATRIA CONTENT - DRAFTING INSTRUCTIONS
 (Read by the Atria Content Drafting routine after its date gate.
 Dustin's routine prompt directs every run to follow this file.)
 
-If Topic is blank, choose a topic not already covered. Check the
-folders in 1-Review, 2-Approved, and 3-Published (folder names and
-review.txt files) and atriains.com/blog, and explain the choice in the
-review note.
+TOPIC SELECTION AND VARIETY
+Two files in Newsletters/_Templates/ hold the history and the idea list:
+- Atria-Content-Log.txt (item 01PKRI2JP7SREGT47PXRFY2ECOOWNE3Y7T): every
+  piece drafted so far, with topic, angle, example/persona, headline.
+- Atria-Topic-Ideas.txt (item 01PKRI2JPAWT7RMMY55BC2AALUOSCRC5BN):
+  Dustin's ideas from real client questions.
+Read both before choosing anything.
+1. If the schedule row names a Topic, use it.
+2. Otherwise take the first unused idea for this category from
+   Atria-Topic-Ideas.txt.
+3. Otherwise choose a new topic yourself: not in the log for this
+   category in the last 12 months, not covered on atriains.com/blog,
+   and timely for the send date (plan-year cycle, open enrollment,
+   tax season, seasonal health topics, new rules taking effect).
+   Consider at least three candidates and pick the most useful one
+   for the audience; list the others in review.txt as future ideas.
+4. Be original every time, even on a repeat theme: a different angle,
+   a different persona name and situation, different example figures,
+   and a headline built differently from the last three in the log.
+   Never reuse a persona name that appears in the log.
+TEST rows follow the same rules, but ignore earlier TEST lines when
+judging repeats.
 
 ============================================================
 RULES FOR ALL RUNS
@@ -164,7 +182,15 @@ STEP 3 - SAVE AND DELIVER
    send the PPTX to the user with SendUserFile, and make the first
    line of review.txt: "Upload failed for: [files] ([error]). The
    PPTX is attached to the Claude run for [date]."
-4. Never move, rename, or delete any existing SharePoint item. Never
+4. Update the history with the Microsoft 365 connector: read
+   Atria-Content-Log.txt, add one line per piece drafted in this run
+   (Draft date | Send date | Category | Issue | Topic | Angle | Example
+   or persona | Headline), and save it back with sharepoint_update_file
+   keeping every existing line. If you used an idea from
+   Atria-Topic-Ideas.txt, add "USED [date]" to that line the same way.
+   These two files are the only items outside 1-Review this task may
+   change.
+5. Never move, rename, or delete any existing SharePoint item. Never
    write to 2-Approved or 3-Published.
-5. Finish with a one-paragraph summary, the file list with OK/FAIL,
+6. Finish with a one-paragraph summary, the file list with OK/FAIL,
    and the link to the 1-Review folder.
