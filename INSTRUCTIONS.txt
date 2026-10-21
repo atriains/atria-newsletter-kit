@@ -215,7 +215,13 @@ DESIGN CONSISTENCY AND VARIETY
   stats, callout, checklist, contact, mythfact, compare, qa, cards,
   text. Pick the blocks that best teach this topic and arrange them
   differently from the last Benefits 101 issue in the content log.
-  Exactly one contact block, always in the last row. Colors, fonts,
+  Exactly one contact block, always in the last row.
+  The story block (sample employee timeline with the spend meter) is a
+  favorite: use it in 3 to 4 Benefits 101 issues a year, never two
+  issues in a row; check the log. Every Benefits 101 issue still has a
+  named, relatable sample employee (a new name each time), even when
+  the story block is not used: put them in a text, stats, qa, or
+  callout block, or the page 1 subhead. Colors, fonts,
   rounded tiles, chips, and numbered tabs stay the same; only the
   selection and arrangement change. Add the blocks used to the log's
   "Example or persona used" column, e.g. "Priya; p2: mythfact, compare,
