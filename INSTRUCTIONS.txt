@@ -180,10 +180,11 @@ which is attached to the routine and cloned as the working repository.
 Do not rebuild layouts by hand and do not edit atria-kit.js; only
 write content. Never commit or push to the repository: keep issue.json
 and all output in a separate folder outside it (~/out/[folder name]/).
-1. From the repository root, run ./setup.sh. If atria-kit.js is not
-   in the working directory, say "Build kit unavailable: repository
-   not attached" in review.txt and the summary, upload the text
-   files, and finish.
+1. Nothing to install: the kit's npm packages, icons, and fonts are
+   inside the repository. Do not run npm install, apt, or any setup
+   script. If atria-kit.js is not in the working directory, say
+   "Build kit unavailable: repository not attached" in review.txt and
+   the summary, upload the text files, and finish.
 2. Read README.txt in the repository. Copy examples/[layout].json to
    issue.json and replace the content with this issue's content
    (layouts: benefits-101, well-being, compliance-corner,

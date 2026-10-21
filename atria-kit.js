@@ -4,19 +4,30 @@
  * Usage: node atria-kit.js <content.json> <out.pptx>
  * content.json must have "layout": one of benefits-101 | well-being |
  * compliance-corner | benefits-buzz | risk-report
- * Requires (npm): pptxgenjs sharp react react-dom react-icons jszip
+ * Requires (npm): pptxgenjs jszip (vendored in vendor/node_modules).
+ * Icons: icons-fa.json holds every Font Awesome 5 solid icon from
+ * react-icons/fa as a 64px alpha mask; colored PNGs are made here.
  * Logos: logo-white.b64.txt and logo-color.b64.txt in the same folder.
  * Everything visual is drawn natively (shapes, gradients, waves) so the
  * PPTX stays small enough to upload.
  */
 const fs = require('fs');
 const path = require('path');
+const zlib = require('zlib');
 const pptxgen = require('pptxgenjs');
 const JSZip = require('jszip');
-const React = require('react');
-const RDS = require('react-dom/server');
-const sharp = require('sharp');
-const fa = require('react-icons/fa');
+const FA = JSON.parse(fs.readFileSync(path.join(__dirname, 'icons-fa.json'), 'utf8'));
+const CRC = Array.from({ length: 256 }, (_, n) => { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xedb88320 ^ (c >>> 1) : c >>> 1; return c >>> 0; });
+const crc32 = (b) => { let c = 0xffffffff; for (const x of b) c = CRC[(c ^ x) & 255] ^ (c >>> 8); return (c ^ 0xffffffff) >>> 0; };
+function pngFromAlpha(alpha, hex, size = 64) {
+  const [r, g, b] = [0, 2, 4].map(i => parseInt(hex.substr(i, 2), 16));
+  const rows = Buffer.alloc((size * 4 + 1) * size);
+  for (let y = 0; y < size; y++) { rows[y * (size * 4 + 1)] = 0;
+    for (let x = 0; x < size; x++) { const o = y * (size * 4 + 1) + 1 + x * 4; rows[o] = r; rows[o + 1] = g; rows[o + 2] = b; rows[o + 3] = alpha[y * size + x]; } }
+  const chunk = (t, d) => { const l = Buffer.alloc(4); l.writeUInt32BE(d.length); const td = Buffer.concat([Buffer.from(t), d]); const c = Buffer.alloc(4); c.writeUInt32BE(crc32(td)); return Buffer.concat([l, td, c]); };
+  const ihdr = Buffer.alloc(13); ihdr.writeUInt32BE(size, 0); ihdr.writeUInt32BE(size, 4); ihdr[8] = 8; ihdr[9] = 6;
+  return Buffer.concat([Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]), chunk('IHDR', ihdr), chunk('IDAT', zlib.deflateSync(rows, { level: 9 })), chunk('IEND', Buffer.alloc(0))]);
+}
 
 const KIT = __dirname;
 const HEAD = 'Segoe UI', BODY = 'Segoe UI', NUM = 'Cambria';
@@ -43,9 +54,8 @@ const iconCache = {};
 async function icon(name, color) {
   const k = name + color;
   if (iconCache[k]) return iconCache[k];
-  if (!fa[name]) throw new Error('Unknown icon ' + name + ' (use a react-icons/fa name, e.g. FaCheck)');
-  const svg = RDS.renderToStaticMarkup(React.createElement(fa[name], { color: '#' + color, size: 64 }));
-  const buf = await sharp(Buffer.from(svg)).resize(64, 64).png({ palette: true, compressionLevel: 9 }).toBuffer();
+  if (!FA[name]) throw new Error('Unknown icon ' + name + ' (use a Font Awesome 5 solid name from react-icons/fa, e.g. FaCheck)');
+  const buf = pngFromAlpha(zlib.inflateSync(Buffer.from(FA[name], 'base64')), color);
   return (iconCache[k] = 'image/png;base64,' + buf.toString('base64'));
 }
 const logo = (which) => 'image/png;base64,' + fs.readFileSync(path.join(KIT, `logo-${which}.b64.txt`), 'utf8').trim();

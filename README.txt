@@ -8,7 +8,7 @@ What it does
   every issue matches the approved templates.
 
 Run
-  ./setup.sh                                  (once per session)
+  (no setup: packages, icons, and fonts are vendored in vendor/)
   ./build.sh issue.json /path/PREFIX          -> PREFIX_newsletter.pptx
                                                  PREFIX_newsletter.pdf
                                                  PREFIX_qa-page-1.png, -2.png
@@ -46,7 +46,9 @@ Risk Report
 
 Files
 - atria-kit.js        layouts and design system
-- setup.sh / build.sh environment setup and build
+- build.sh            build (sets NODE_PATH and fonts itself)
+- icons-fa.json       all Font Awesome 5 solid icons as 64px masks
+- vendor/             pptxgenjs, jszip and deps; Selawik fonts
 - logo-white.b64.txt  reversed logo (hero, dark cards)
 - logo-color.b64.txt  color logo (light cards)
 - examples/*.json     approved Issue 01 content per category (layout
