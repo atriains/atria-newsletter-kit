@@ -162,9 +162,12 @@ STEP 3 - SAVE AND DELIVER
 ============================================================
 1. Folder name = the file prefix (YYYY-MM-DD_[Category]_Issue[NN] or
    YYYY-MM-DD_BlogPost_[short-slug], using the send/post date; TEST_ in
-   front for test rows). Put every deliverable in ~/out/[folder name]/:
-   newsletter.pptx, wordpress.html, email.txt, review.txt (Track A;
-   no PDF) or wordpress.html, linkedin.txt, review.txt
+   front for test rows). Put every deliverable in ~/out/[folder name]/,
+   and name each file with the full prefix, exactly:
+     [folder name]_newsletter.pptx, [folder name]_wordpress.html,
+     [folder name]_email.txt, [folder name]_review.txt (Track A; no PDF)
+   or [folder name]_wordpress.html, [folder name]_linkedin.txt,
+     [folder name]_review.txt
    (Track B). Not the kit's PDF, not issue.json, not QA images.
    Never create .md files. Track A review.txt starts with: "Review:
    edit the PPTX, then File > Export > PDF into this folder as

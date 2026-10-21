@@ -41,8 +41,10 @@ def put(tok, folder, path):
                                           "Content-Type": "application/octet-stream"})
     with urllib.request.urlopen(req, timeout=120) as r:
         item = json.load(r)
-    if item.get("size") != len(data):
-        raise RuntimeError(f"size mismatch: sent {len(data)}, stored {item.get('size')}")
+    # SharePoint rewrites Office files (adds document properties), so a
+    # stored size different from the sent size is normal for .pptx/.docx.
+    if not item.get("id"):
+        raise RuntimeError("Graph returned no item id")
     return item.get("webUrl", "")
 
 
