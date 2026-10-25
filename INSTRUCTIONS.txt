@@ -28,6 +28,23 @@ Read both before choosing anything.
 TEST rows follow the same rules, but ignore earlier TEST lines when
 judging repeats.
 
+REHEARSAL ROWS (October to December 2026)
+Rows whose Category starts with "REHEARSAL" are full dress rehearsals
+before the January 2027 launch. Treat them exactly like live issues of
+the named category (research, sources, build, files, upload, log,
+notification), with these differences:
+- Issue shows as given (R1, R2) on the masthead and in file names.
+- Folder and file prefix: REHEARSAL_[send date]_[Category]_Issue[R#]
+  (Blog: REHEARSAL_[post date]_BlogPost_[slug]).
+- Log Category as "REHEARSAL [Category]".
+- Topics: rehearsal topics do NOT count as used for the 12-month
+  no-repeat rule, so live issues may cover them. Personas, headlines,
+  and page 2 arrangements in REHEARSAL lines DO count for variety.
+- Do not mark ideas in Atria-Topic-Ideas.txt as USED for rehearsals.
+- review.txt line 2: "REHEARSAL - not for client distribution."
+- A Topic note on the row (for example "use the story block") is an
+  instruction for that rehearsal.
+
 ============================================================
 RULES FOR ALL RUNS
 ============================================================
