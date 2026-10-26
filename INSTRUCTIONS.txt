@@ -28,6 +28,16 @@ Read both before choosing anything.
 TEST rows follow the same rules, but ignore earlier TEST lines when
 judging repeats.
 
+REDRAFTS
+Always draft every row that matches today, even if the content log or
+SharePoint suggests it was drafted earlier today. A second run on the
+same day means Dustin deleted or rejected the first draft and wants a
+new one under the current rules. Do not decide to skip. Check folders
+by listing 1-Review directly, never by SharePoint search (search
+results lag and still show deleted files). If a folder still exists,
+the uploader puts the new draft in [folder]_v2. Add a new log line
+ending in "(redraft)"; leave the earlier line as is.
+
 REHEARSAL ROWS (October to December 2026)
 Rows whose Category starts with "REHEARSAL" are full dress rehearsals
 before the January 2027 launch. Treat them exactly like live issues of
