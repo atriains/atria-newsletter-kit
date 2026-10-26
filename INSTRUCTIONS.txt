@@ -52,6 +52,24 @@ RULES FOR ALL RUNS
   current and sourced; anything unverifiable goes in the review note,
   not the content.
 - No client names or data traceable to a client.
+- Write for every funding arrangement. Atria's clients include fully
+  insured, level-funded, and self-funded plans, and every piece must
+  be useful to all of them. Never write as if every employer makes
+  plan decisions itself. Where the decision-maker differs, say so and
+  give each its angle:
+  - Self-funded (and level-funded, where it applies): what the plan
+    sponsor decides and the levers it controls.
+  - Fully insured: the carrier makes the decision, so the employer's
+    job is to understand how its carrier handles the issue (coverage
+    criteria, prior authorization, care management, programs offered,
+    renewal impact), what to ask the carrier and Atria, and whether
+    that approach fits its workforce.
+  A short "If you're fully insured / If you're self-funded" split is
+  the preferred way to do this on Buzz and Compliance Corner pieces.
+  Example: on GLP-1s, a self-funded employer decides coverage and
+  utilization rules; a fully insured employer should know its
+  carrier's coverage criteria, prior authorization and step rules,
+  weight-management programs, and how GLP-1 cost shows up in renewal.
 - Tribal-specific content only when the Topic says so.
 - Research. Use only trusted, highly reputable sources, as broadly as
   the topic needs. Government primary sources are required for every
