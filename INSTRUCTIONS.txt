@@ -64,8 +64,15 @@ RULES FOR ALL RUNS
     criteria, prior authorization, care management, programs offered,
     renewal impact), what to ask the carrier and Atria, and whether
     that approach fits its workforce.
-  A short "If you're fully insured / If you're self-funded" split is
-  the preferred way to do this on Buzz and Compliance Corner pieces.
+  Do not split the piece into separate fully insured and self-funded
+  sections. Write one story that flows, with short inline call-outs
+  where the angle differs, e.g. "Fully insured? This still matters:
+  ask your carrier how it ..." or "Self-funded? You set this rule, so
+  ...". The tone is reassurance that the topic matters to every
+  employer, whatever its funding, and here is how it applies to you.
+  In the PPTX, use at most one or two compact call-outs (a sentence in
+  a card body, callout item, or stat description), never a two-column
+  divide.
   Example: on GLP-1s, a self-funded employer decides coverage and
   utilization rules; a fully insured employer should know its
   carrier's coverage criteria, prior authorization and step rules,
