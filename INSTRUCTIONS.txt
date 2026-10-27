@@ -215,10 +215,20 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
    written for employees, in the same plain, friendly voice as the
    newsletter. Benefits Buzz, Compliance Corner, and Risk Report
    emails are written for HR, finance, and operations leaders. Never
-   say "this month's" or imply a fixed cadence. End with this line and
-   no name or sign-off (Dustin's Outlook signature is added when he
-   sends):
+   say "this month's" or imply a fixed cadence. Never say "attached";
+   the PDF is linked, not attached. Layout, in this order:
+     Subject: ...
+     Preview text: ...
+     (blank line)
+     Key points:
+     - [three bullets, each under 12 words, taken from the issue]
+     (blank line)
+     Hello,
+     [body paragraphs]
      Questions? (507) 500-8377 | help@atriains.com
+   The Key points lines fill the "In this issue" box in the Brevo email
+   template, so write exactly three. End with the Questions line and no
+   name or sign-off.
 5. review.txt - sources with links, figures to double-check, topic
    rationale, recipe photo link (Well-Being), open questions.
 
