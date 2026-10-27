@@ -141,7 +141,7 @@ labeled lines:
   Title: [post title]
   Slug: [suggested-url-slug]
   Excerpt: [one or two sentences]
-  Category: [Benefits 101 | Benefits Buzz | Well-Being | Blog]
+  Category: [Benefits 101 | Benefits Buzz | Well-Being | Risk Report | Blog]
   Featured image file: [kebab-name]-featured.png
   Featured image prompt: [a detailed art-direction brief, 60-120 words]
   Mid-article image prompt: [same standard, its own scene]
@@ -202,8 +202,8 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
 2. (no PDF upload) Dustin edits the PPTX and exports the final PDF
    himself in PowerPoint during review. The kit still builds a PDF,
    but only to make the QA page images; never upload it.
-3. wordpress.html  - Benefits 101, Benefits Buzz, Well-Being ONLY.
-   Never for Compliance Corner. This becomes a WordPress post that
+3. wordpress.html  - Benefits 101, Benefits Buzz, Well-Being, and Risk
+   Report. Never for Compliance Corner. This becomes a WordPress post that
    presents the newsletter: same content, same client-facing tone,
    rebuilt as readable web HTML (headings, sections, the recipe as
    text for Well-Being), with a "Download the PDF" link line near the
