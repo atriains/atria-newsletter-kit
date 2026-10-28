@@ -239,6 +239,11 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
      Questions? (507) 500-8377 | help@atriains.com
    The Key points lines fill the "In this issue" box in the Brevo email
    template, so write exactly three.
+   Compliance Corner only (it has no wordpress-post.txt): add two lines
+   after Lists for the email's hero image, following the same image
+   standard and topic test as the WordPress prompts:
+     Email image prompt: [landscape 1200x600, subject centered]
+     Email image alt text: [plain description]
    Lists line (Brevo lists Grok sends to, comma-separated, exact names):
      REHEARSAL or TEST rows, any category: Atria - Rehearsal
      Benefits Buzz:      Atria - Clients, Atria - Prospects
