@@ -95,7 +95,7 @@ function makeCtx(pres, P) {
   const masthead = (s, c, onDark = true) => {
     s.addImage({ data: logo('white'), x: 0.6, y: 0.38, w: 1.45, h: 0.372, objectName: 'Logo' });
     tx(s, req(c, 'category', 'content'), { x: 4.0, y: 0.3, w: 3.9, h: 0.3, fontSize: 15, bold: true, color: WHITE, align: 'right' });
-    tx(s, [{ text: `Issue ${req(c, 'issue', 'content')}  ·  `, options: { color: P.accent } }, { text: req(c, 'issueTitle', 'content'), options: { color: WHITE, italic: true } }],
+    tx(s, [{ text: `${c.issue === 'Special' ? 'Special edition' : `Issue ${req(c, 'issue', 'content')}`}  ·  `, options: { color: P.accent } }, { text: req(c, 'issueTitle', 'content'), options: { color: WHITE, italic: true } }],
       { x: 3.4, y: 0.62, w: 4.5, h: 0.22, fontSize: 10, align: 'right' });
   };
   const tab = (s, x, y, num, title, o = {}) => {
@@ -456,7 +456,7 @@ async function applyGradients(buf, P) {
   const P = PALETTES[c.layout];
   const pres = new pptxgen();
   pres.defineLayout({ name: 'LETTER_P', width: 8.5, height: 11 }); pres.layout = 'LETTER_P';
-  pres.title = `${c.category} Issue ${c.issue}: ${c.issueTitle}`; pres.author = 'Atria';
+  pres.title = `${c.category} ${c.issue === 'Special' ? 'Special edition' : `Issue ${c.issue}`}: ${c.issueTitle}`; pres.author = 'Atria';
   await fn(pres, P, c);
   const buf = await pres.write({ outputType: 'nodebuffer' });
   fs.writeFileSync(outFile, await applyGradients(buf, P));
