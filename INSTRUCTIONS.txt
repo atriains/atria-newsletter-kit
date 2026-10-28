@@ -163,8 +163,11 @@ labeled lines:
     Prefer objects and settings; include people only when the topic
     truly needs them, and then never real or identifiable people (no
     faces in close-up, no celebrities). No text, numbers, logos, or
-    brand names in the image. State the aspect ratio: featured 1200x628
-    landscape; mid-article square, at least 800x800.
+    brand names in the image. State the aspect ratio: featured 1200x762
+    landscape, with the main subject in the right two-thirds of the
+    frame and the left third plain or soft background (Atria's logo and
+    stripe overlay, _Templates/Atria-Featured-Overlay.png, covers it);
+    mid-article square, at least 800x800.
   PDF link: [PDF LINK] is in wordpress.html (Track A only); replace it
     with the uploaded PDF's media URL.
 
