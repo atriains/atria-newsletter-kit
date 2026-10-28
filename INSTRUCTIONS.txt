@@ -152,6 +152,11 @@ labeled lines:
   Mid-article image alt text: [must match the alt in wordpress.html,
     and describe what the prompt asks for; if the prompt has no
     people, the alt text has no people]
+  Topic test for both prompts: a reader who sees only the image should
+    be able to guess the issue's subject (e.g., prescription bottles and
+    coins for PBM rebates; a clinic waiting room for site-of-care costs).
+    Generic office or desk scenes (laptops, glasses, plants, blank
+    folders, handshakes) fail the test unless the topic is about them.
   Image standard for both prompts: write them so an image generator
     produces a beautiful, clean, crisp, professional image that matches
     the quality of the article. Healthcare or topic-related subject
