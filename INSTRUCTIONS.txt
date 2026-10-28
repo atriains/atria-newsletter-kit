@@ -250,8 +250,8 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
      Benefits 101:       Atria - Clients, Atria - Client Employees, Atria - Prospects
      Well-Being:         Atria - Clients, Atria - Client Employees, Atria - Prospects
      Compliance Corner:  Atria - Clients
-     Risk Report:        Atria - Clients End with the Questions line and no
-   name or sign-off.
+     Risk Report:        Atria - Clients
+   End with the Questions line and no name or sign-off.
 5. review.txt - sources with links, figures to double-check, topic
    rationale, recipe photo link (Well-Being), open questions.
 
