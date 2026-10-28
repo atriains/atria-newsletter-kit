@@ -133,7 +133,8 @@ WORDPRESS FILES (Track A posts and every Track B post)
 wordpress.html holds ONLY the HTML that gets pasted into the WordPress
 Code Editor: it starts with the first <p> and ends with the disclaimer
 <p>. No title line, no image-URL line, no labels, no comments other
-than "<!-- Floated mid-article image -->", no <html>, <head>, <body>,
+than "<!-- Floated mid-article image -->" and "<!-- PDF download -->",
+no <html>, <head>, <body>,
 or <h1>-<h3>. Same markup and style as the posts Dustin has pasted
 for years (see _Templates/Atria-WordPress-HTML-Template.html).
 wordpress-post.txt holds everything else WordPress needs, as plain
@@ -175,8 +176,9 @@ labeled lines:
     frame and the left third plain or soft background (Atria's logo and
     stripe overlay, _Templates/Atria-Featured-Overlay.png, covers it);
     mid-article square, at least 800x800.
-  PDF link: [PDF LINK] is in wordpress.html (Track A only); replace it
-    with the uploaded PDF's media URL.
+  PDF link: [PDF LINK] (twice) and [PDF PREVIEW] are in wordpress.html
+    (Track A only); Grok replaces them with the PDF's media URL and the
+    page-1 preview image's media URL.
 
 ============================================================
 TRACK A - CLIENT NEWSLETTERS
@@ -216,9 +218,13 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
    Report. Never for Compliance Corner. This becomes a WordPress post that
    presents the newsletter: same content, same client-facing tone,
    rebuilt as readable web HTML (headings, sections, the recipe as
-   text for Well-Being), with a "Download the PDF" link line near the
-   top (link left as [PDF LINK] for posting). Write it in Track A
-   tone, not Track B blog style. Follow WORDPRESS FILES above, and
+   text for Well-Being), with the PDF download block (page-1 preview
+   beside a "Download the PDF" button) right after the opening
+   paragraph, copied exactly from the TRACK A section of
+   _Templates/Atria-WordPress-HTML-Template.html with only the category,
+   issue, and issue title filled in; [PDF LINK] and [PDF PREVIEW] stay
+   as they are for posting. Write it in Track A tone, not Track B blog
+   style. Follow WORDPRESS FILES above, and
    write wordpress-post.txt with it.
 4. email.txt  - subject, preview text, short body introducing the PDF.
    Audience matches the piece: Benefits 101 and Well-Being emails are
