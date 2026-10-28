@@ -157,6 +157,8 @@ labeled lines:
     coins for PBM rebates; a clinic waiting room for site-of-care costs).
     Generic office or desk scenes (laptops, glasses, plants, blank
     folders, handshakes) fail the test unless the topic is about them.
+    No blank books, folders, or papers as props: since images can't show
+    text, they read as empty and add nothing.
   Image standard for both prompts: write them so an image generator
     produces a beautiful, clean, crisp, professional image that matches
     the quality of the article. Healthcare or topic-related subject
