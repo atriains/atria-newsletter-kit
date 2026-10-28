@@ -380,7 +380,11 @@ async function buzz(pres, P, c) {
     tx(s1, b.label, { x: kx + 0.22, y, w: kw - 0.4, h: 0.22, fontSize: 8.5, bold: true });
     rr(s1, { x: kx + 0.22, y: y + 0.26, w: kw - 0.44, h: 0.26, rectRadius: 0.13, fill: { color: P.tint } }, 'BarTrack' + i);
     rr(s1, { x: kx + 0.22, y: y + 0.26, w: bw, h: 0.26, rectRadius: 0.13, fill: { color: i ? P.mid : AMBER_D } }, 'Bar' + i);
-    tx(s1, b.display || String(b.value), { x: kx + 0.22 + bw - 0.66, y: y + 0.26, w: 0.6, h: 0.26, fontFace: NUM, fontSize: 10.5, bold: true, color: WHITE, align: 'right', valign: 'middle' });
+    // Short bars can't hold their label; put it just right of the bar in dark text.
+    const inside = bw >= 0.75;
+    tx(s1, b.display || String(b.value), inside
+      ? { x: kx + 0.22 + bw - 0.66, y: y + 0.26, w: 0.6, h: 0.26, fontFace: NUM, fontSize: 10.5, bold: true, color: WHITE, align: 'right', valign: 'middle' }
+      : { x: kx + 0.22 + bw + 0.06, y: y + 0.26, w: 0.7, h: 0.26, fontFace: NUM, fontSize: 10.5, bold: true, color: P.dark, align: 'left', valign: 'middle' });
   });
   s1.addShape(pres.shapes.LINE, { x: kx + 0.22, y: ky + 2.62, w: kw - 0.44, h: 0, line: { color: P.pale, width: 0.75, dashType: 'dash' }, objectName: 'CardRule' });
   tx(s1, hc.source || '', { x: kx + 0.22, y: ky + 2.68, w: kw - 0.4, h: 0.22, fontSize: 7.5, italic: true, color: P.muted });
