@@ -229,6 +229,7 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
    the PDF is linked, not attached. Layout, in this order:
      Subject: ...
      Preview text: ...
+     Lists: [from the table below]
      (blank line)
      Key points:
      - [three bullets, each under 12 words, taken from the issue]
@@ -237,7 +238,14 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
      [body paragraphs]
      Questions? (507) 500-8377 | help@atriains.com
    The Key points lines fill the "In this issue" box in the Brevo email
-   template, so write exactly three. End with the Questions line and no
+   template, so write exactly three.
+   Lists line (Brevo lists Grok sends to, comma-separated, exact names):
+     REHEARSAL or TEST rows, any category: Atria - Rehearsal
+     Benefits Buzz:      Atria - Clients, Atria - Prospects
+     Benefits 101:       Atria - Clients, Atria - Client Employees, Atria - Prospects
+     Well-Being:         Atria - Clients, Atria - Client Employees, Atria - Prospects
+     Compliance Corner:  Atria - Clients
+     Risk Report:        Atria - Clients End with the Questions line and no
    name or sign-off.
 5. review.txt - sources with links, figures to double-check, topic
    rationale, recipe photo link (Well-Being), open questions.
