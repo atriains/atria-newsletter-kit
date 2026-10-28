@@ -28,9 +28,11 @@ Writing issue.json
   under ~60 characters (Well-Being under ~45).
 - Icons: any Font Awesome 5 solid name from react-icons/fa, e.g.
   FaCheck, FaShieldAlt, FaPiggyBank, FaHeartbeat, FaUtensils.
-- Photos (Well-Being): the PPTX leaves labeled photo frames. Put the
-  recipe photo URL in recipe.photoUrl and in review.txt; Dustin inserts
-  it. Never embed photos.
+- Photos (Well-Being): set "heroPhoto": {"file": "photos/x.jpg"} and
+  "recipe": {"photoFile": "photos/y.jpg"} (paths relative to the content
+  JSON; JPEG or PNG) and the kit cover-crops each into its frame. Leave a
+  field out and the kit draws the labeled placeholder frame instead.
+  Keep recipe.photoUrl as the source link.
 
 Approximate length limits (characters, including spaces)
 - subhead 170 | card title 30 | card body 130 | timeline detail 60

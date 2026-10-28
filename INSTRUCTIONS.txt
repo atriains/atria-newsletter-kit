@@ -231,7 +231,7 @@ Category rules:
 - Benefits 101 and Well-Being: employee-facing, plain language.
 - Well-Being: short article plus one very healthy recipe (low
   saturated fat, low sodium, low added sugar) from a public-domain
-  source with a real photo. Put the photo link in the review note.
+  source with a real photo. Embed the photos (BUILD STEPS 5).
 - Benefits Buzz and Compliance Corner: HR and CFO audience.
 - Compliance Corner: no payroll items. State content defaults to
   California. Minnesota or Wisconsin items are allowed only if they
@@ -293,8 +293,9 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
      Compliance Corner:  Atria - Clients
      Risk Report:        Atria - Clients
    End with the Questions line and no name or sign-off.
-5. review.txt - sources with links, figures to double-check, topic
-   rationale, recipe photo link (Well-Being), open questions.
+5. review.txt - FLAGGED FOR REVIEW section (see STEP 3), sources with
+   links, figures to double-check, topic rationale, photo sources and
+   links (Well-Being), open questions.
 
 ============================================================
 TRACK B - TRADITIONAL PUBLIC BLOG POSTS
@@ -316,7 +317,8 @@ Track B files (prefix with YYYY-MM-DD_BlogPost_ using the post date):
    wordpress-post.txt.
 2. linkedin.txt - plain-text LinkedIn companion post. Note that the
    link slug is a best guess until published.
-3. review.txt - sources, topic rationale, overlap check, open questions.
+3. review.txt - FLAGGED FOR REVIEW section (see STEP 3), sources, topic
+   rationale, overlap check, open questions.
 
 ============================================================
 BUILD STEPS (Track A newsletters)
@@ -363,8 +365,23 @@ DESIGN CONSISTENCY AND VARIETY
 4. Open both QA page images and check for overflow, overlap, or
    cut-off text. Fix by shortening copy in issue.json and rebuild.
    Never shrink fonts or edit the layout code.
-5. Well-Being: never embed a photo. The PPTX keeps labeled photo
-   frames; put the recipe photo URL in review.txt.
+5. Well-Being photos: embed both, so the PDF needs no manual work.
+   - Recipe photo: the recipe's own photo from its public-domain source
+     (USDA MyPlate Kitchen and other U.S. government recipe pages).
+   - Activity photo: a public-domain photo that fits the article, from a
+     U.S. government source (CDC, NIH, USDA, NPS, and similar) or one
+     clearly marked public domain (CC0). No identifiable faces in close-up.
+   Download each with fetch.py or curl into ~/work/photos/ (never into
+   ~/out/, which gets uploaded), convert to JPEG no wider than 1600 px
+   (quality about 80), and set issue.json "heroPhoto": {"file":
+   "photos/<name>.jpg"} and "recipe": {"photoFile": "photos/<name>.jpg"}
+   (paths relative to issue.json). The kit crops each to its frame. Check
+   both in the QA page images. Credit the photos in the disclaimer
+   (e.g. "Photos: USDA, CDC") and list each source page and file URL in
+   review.txt. If a photo can't be downloaded or its license is unclear,
+   leave that field out (the kit shows the labeled frame) and add a
+   FLAGGED FOR REVIEW item saying which frame needs a photo and the best
+   candidate link.
 6. Risk Report uses a provisional layout: flag it in review.txt as a
    new template awaiting approval.
 7. Write wordpress.html, email.txt, and review.txt from the final
@@ -408,8 +425,18 @@ STEP 3 - SAVE AND DELIVER
      [folder name]_review.txt
    (Track B). Not the kit's PDF, not issue.json, not QA images.
    Never create .md files. Track A review.txt starts with: "Review:
-   edit the PPTX, then File > Export > PDF into this folder as
-   [prefix]_newsletter.pdf before moving the folder to 2-Approved."
+   open the PowerPoint, edit if needed, then use Approve in the approval
+   email (Atlas saves the PDF and moves this folder to 2-Approved)."
+   FLAGGED FOR REVIEW: every review.txt has a section headed exactly
+   "FLAGGED FOR REVIEW" right after its opening lines (before sources),
+   ended by a blank line. List each item that needs Dustin or Beau's
+   attention before approving, one per line starting "- ", most important
+   first, at most 8, each one short sentence (under about 25 words)
+   saying what and why: UNVERIFIED or dated figures, judgment calls on
+   wording or sensitive claims, photos not embedded, topic gaps or
+   deviations from an on-demand request, anything they must decide. Don't
+   list routine notes. If nothing needs attention, write "- None." The
+   approval email shows these lines word for word.
 2. Upload them all to SharePoint in one command from the repository
    root:
      python3 upload.py "[folder name]" ~/out/[folder name]/*

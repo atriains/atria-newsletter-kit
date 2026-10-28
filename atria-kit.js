@@ -31,6 +31,44 @@ function pngFromAlpha(alpha, hex, size = 64) {
 }
 
 const KIT = __dirname;
+let CONTENT_DIR = process.cwd(); // photo paths in content.json are relative to it
+
+// Natural size of a JPEG or PNG (for cover-cropping photos into frames).
+function imageSize(buf) {
+  if (buf[0] === 0x89 && buf[1] === 0x50) return { w: buf.readUInt32BE(16), h: buf.readUInt32BE(20) };
+  if (buf[0] === 0xff && buf[1] === 0xd8) {
+    let o = 2;
+    while (o < buf.length) {
+      if (buf[o] !== 0xff) { o++; continue; }
+      const m = buf[o + 1], len = buf.readUInt16BE(o + 2);
+      if ((m >= 0xc0 && m <= 0xc3) || (m >= 0xc5 && m <= 0xc7) || (m >= 0xc9 && m <= 0xcb) || (m >= 0xcd && m <= 0xcf)) {
+        return { w: buf.readUInt16BE(o + 7), h: buf.readUInt16BE(o + 5) };
+      }
+      o += 2 + len;
+    }
+  }
+  return null;
+}
+
+// A photo cover-cropped into a frame, or the labeled placeholder when no usable file is given.
+function photoOrFrame(slide, rr, tx, file, box, fill, name, label, P) {
+  rr(slide, { ...box, rectRadius: 0.2, fill: { color: fill } }, name);
+  const abs = file ? path.resolve(CONTENT_DIR, file) : null;
+  const buf = abs && fs.existsSync(abs) ? fs.readFileSync(abs) : null;
+  const size = buf && imageSize(buf);
+  if (size) {
+    const ext = buf[0] === 0x89 ? 'png' : 'jpeg';
+    slide.addImage({
+      data: `image/${ext};base64,${buf.toString('base64')}`,
+      x: box.x, y: box.y, w: size.w / 100, h: size.h / 100,
+      sizing: { type: 'cover', w: box.w, h: box.h },
+      objectName: name + '-photo',
+    });
+    return true;
+  }
+  tx(slide, label + '\nInsert > Pictures, then crop to this frame', { x: box.x + 0.1, y: box.y + box.h / 2 - 0.3, w: box.w - 0.2, h: 0.6, fontSize: 9, color: P.muted, align: 'center', valign: 'middle' });
+  return false;
+}
 const HEAD = 'Segoe UI', BODY = 'Segoe UI', NUM = 'Cambria';
 const W = 8.5;
 
@@ -212,9 +250,8 @@ async function wellBeing(pres, P, c) {
   C.hero(s1, 5.0, 0.16, 2.2); C.dots(s1, 4.7, 0.75, 3.4, 3.8, P.accent); C.masthead(s1, c);
   C.headline(s1, req(c, 'headline', 'well-being'), { w: 4.0, h: 2.5, fontSize: 38 });
   tx(s1, req(c, 'subhead', 'well-being'), { x: 0.6, y: 3.78, w: 3.85, h: 0.62, fontSize: 12, color: P.heroSub, lineSpacingMultiple: 1.15 });
-  // activity photo frame (placeholder shape; Dustin inserts photo)
-  rr(s1, { x: 5.05, y: 1.05, w: 2.85, h: 3.35, rectRadius: 0.2, fill: { color: P.tint } }, 'PhotoFrame-hero');
-  tx(s1, 'Activity photo\nInsert > Pictures, then crop to this frame', { x: 5.15, y: 2.4, w: 2.65, h: 0.6, fontSize: 9, color: P.muted, align: 'center', valign: 'middle' });
+  // activity photo: embedded from heroPhoto.file when given, else a labeled frame
+  photoOrFrame(s1, rr, tx, c.heroPhoto && c.heroPhoto.file, { x: 5.05, y: 1.05, w: 2.85, h: 3.35 }, P.tint, 'PhotoFrame-hero', 'Activity photo', P);
   const sk = req(c, 'sticker', 'well-being');
   s1.addShape(pres.shapes.OVAL, { x: 4.55, y: 3.3, w: 1.3, h: 1.3, fill: { color: AMBER }, line: { color: WHITE, width: 3 }, shadow: { type: 'outer', color: '000000', blur: 8, offset: 3, angle: 90, opacity: 0.3 }, objectName: 'Sticker' });
   tx(s1, sk.big, { x: 4.55, y: 3.52, w: 1.3, h: 0.5, fontFace: NUM, fontSize: 28, bold: true, color: P.dark, align: 'center', valign: 'middle' });
@@ -243,8 +280,7 @@ async function wellBeing(pres, P, c) {
   const rc = req(c, 'recipe', 'well-being');
   const s2 = pres.addSlide(); s2.background = { color: P.bg2 };
   const tile = (x, y, w, h, fill, n) => rr(s2, { x, y, w, h, rectRadius: 0.2, fill: { color: fill }, shadow: C.shadow() }, n);
-  rr(s2, { x: 0.5, y: 0.5, w: 3.3, h: 3.81, rectRadius: 0.2, fill: { color: P.pale } }, 'PhotoFrame-recipe');
-  tx(s2, 'Recipe photo\nInsert > Pictures, then crop to this frame', { x: 0.6, y: 2.05, w: 3.1, h: 0.6, fontSize: 9, color: P.muted, align: 'center', valign: 'middle' });
+  photoOrFrame(s2, rr, tx, rc.photoFile, { x: 0.5, y: 0.5, w: 3.3, h: 3.81 }, P.pale, 'PhotoFrame-recipe', 'Recipe photo', P);
   tile(4.0, 0.5, 4.0, 3.81, WHITE, 'TitleCard');
   C.tab(s2, 4.25, 0.75, '02', rc.kicker || 'On the menu', { w: 2.5, size: 11 });
   tx(s2, rc.name, { x: 4.25, y: 1.2, w: 3.6, h: 0.45, fontSize: 21, bold: true, color: P.dark, fit: 'shrink' });
@@ -452,6 +488,7 @@ async function applyGradients(buf, P) {
   const [, , inFile, outFile] = process.argv;
   if (!inFile || !outFile) { console.error('Usage: node atria-kit.js <content.json> <out.pptx>'); process.exit(1); }
   const c = JSON.parse(fs.readFileSync(inFile, 'utf8'));
+  CONTENT_DIR = path.dirname(path.resolve(inFile));
   const fn = LAYOUTS[c.layout]; if (!fn) throw new Error('Unknown layout: ' + c.layout);
   const P = PALETTES[c.layout];
   const pres = new pptxgen();
