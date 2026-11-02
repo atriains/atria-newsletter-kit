@@ -180,6 +180,8 @@ labeled lines:
   Category: [Benefits 101 | Benefits Buzz | Well-Being | Risk Report | Blog]
   Featured image file: [kebab-name]-featured.png
   Featured image prompt: [a detailed art-direction brief, 60-120 words]
+  Featured image prompt 2: [same standard, a clearly different scene]
+  Featured image prompt 3: [same standard, a third different scene]
   Mid-article image prompt: [same standard, its own scene]
   Featured image alt text: [plain description]
   Mid-article image file: [kebab-name].png  (must match the src in
@@ -189,8 +191,9 @@ labeled lines:
     and describe what the prompt asks for; if the prompt has no
     people, the alt text has no people]
   Topic test for both prompts: a reader who sees only the image should
-    be able to guess the issue's subject (e.g., prescription bottles and
-    coins for PBM rebates; a clinic waiting room for site-of-care costs).
+    be able to guess the issue's subject (e.g., a pharmacist's hands counting
+    tablets on a tray for PBM rebates; a quiet clinic waiting room for
+    site-of-care costs).
     Generic office or desk scenes (laptops, glasses, plants, blank
     folders, handshakes) fail the test unless the topic is about them.
     No blank books, folders, or papers as props: since images can't show
@@ -201,8 +204,16 @@ labeled lines:
     matter, described concretely: the setting, the objects, the
     composition and camera angle, lighting, depth of field, and a calm
     palette that sits well beside Atria's navy, teal, and green
-    (whites, soft blues, natural wood, plants). Editorial photography
-    or refined 3D/flat illustration, never cartoonish or stock-cliche.
+    (whites, soft blues, natural wood, plants). Write each prompt as a
+    photographer's shot list for real-looking editorial photography: one
+    real place or object as the subject, the camera (e.g., 50mm, eye
+    level, shallow depth of field), the light (e.g., soft morning window
+    light), and the background. No symbolic props or visual metaphors
+    (coins, piggy banks, gavels, shields, scales of justice, puzzle
+    pieces, arrows, floating icons, glowing networks), no illustration or
+    3D renders. The three featured prompts are three genuinely different
+    photographs of the topic (different setting, subject, or angle), so
+    Dustin can pick one; Grok makes all three as image sets 1-3.
     Prefer objects and settings; include people only when the topic
     truly needs them, and then never real or identifiable people (no
     faces in close-up, no celebrities). No text, numbers, logos, or
@@ -284,6 +295,8 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
    after Lists for the email's hero image, following the same image
    standard and topic test as the WordPress prompts:
      Email image prompt: [landscape 1200x600, subject in the right two-thirds]
+     Email image prompt 2: [a clearly different photograph of the topic]
+     Email image prompt 3: [a third different photograph]
      Email image alt text: [plain description]
    Lists line (Brevo lists Grok sends to, comma-separated, exact names):
      REHEARSAL or TEST rows, any category: Atria - Rehearsal
