@@ -190,30 +190,65 @@ labeled lines:
   Mid-article image alt text: [must match the alt in wordpress.html,
     and describe what the prompt asks for; if the prompt has no
     people, the alt text has no people]
-  Topic test for both prompts: a reader who sees only the image should
-    be able to guess the issue's subject (e.g., a pharmacist's hands counting
-    tablets on a tray for PBM rebates; a quiet clinic waiting room for
-    site-of-care costs).
-    Generic office or desk scenes (laptops, glasses, plants, blank
-    folders, handshakes) fail the test unless the topic is about them.
-    No blank books, folders, or papers as props: since images can't show
-    text, they read as empty and add nothing.
-  Image standard for both prompts: write them so an image generator
+  IMAGE PROMPTS (featured 1-3, mid-article, and Compliance Corner's email
+  prompts 1-3). Work in this order:
+  1. Subject first. Before writing any prompt, write three short "Image
+     angle" lines in review.txt, one per prompt: which specific part of
+     THIS issue the image shows (a key point, a task, a deadline, a
+     decision) and the real-world place or object where that happens.
+     Each prompt then depicts its angle; the three angles are different
+     parts of the issue, not three settings for the same mood.
+  2. Topic test: a reader who sees only the image should be able to guess
+     the issue's subject, not just its industry. "Healthcare" is not a
+     subject. Examples that pass: a pharmacist's hands counting tablets
+     on a tray (PBM rebates); a quiet clinic waiting room (site-of-care
+     costs); an HR office wall calendar with blank squares and one
+     square ringed in pen, beside a tray of sealed outgoing envelopes
+     (year-end filing deadlines); a payroll office desk with a closed
+     check-printing tray and a desk lamp at dusk (contribution limits
+     and payroll setup); an open filing drawer of hanging folders with
+     blank tabs (plan document compliance).
+  3. Show where the work happens. For compliance, tax, filing, limits,
+     and regulatory topics (Compliance Corner, Risk Report, and any
+     issue like them), show the employer's side: HR and payroll
+     offices, mail and filing, calendars and planning, a meeting room
+     set for open enrollment, a worksite. Clinical scenes (stethoscopes,
+     exam rooms, waiting rooms, pharmacies, hospital hallways) are
+     allowed only when the issue is about care, drugs, providers, or
+     costs of care.
+  4. Fails automatically: generic office or desk scenes (laptops,
+     glasses, plants, mugs, handshakes) unless the topic is about them;
+     stethoscopes or clinical props on a non-clinical topic; "calm
+     workplace at sunrise" mood shots; three prompts that are the same
+     idea in different rooms.
+  5. Props that can carry a subject without text: wall or desk calendars
+     with blank squares (one may be ringed or flagged); trays of sealed
+     envelopes; hanging folders or binders with blank tabs; a closed
+     ledger or check tray; a time clock; ID badge lanyards on hooks;
+     safety gear on a worksite rack (Risk Report); a set-up meeting room.
+     Anything with a printed surface (forms, labels, screens, signs)
+     must be blank, face-down, or turned away. Single blank sheets or
+     blank books on their own still fail: they read as empty.
+  6. Check before writing the files: reread each prompt against its Image
+     angle line and the topic test. Rewrite any prompt that fails. If an
+     angle can't be shown without text, pick a different angle. If the
+     best prompt is still a stretch, add a FLAGGED FOR REVIEW item: "Image
+     prompt [n] is a weak fit: [why]."
+  Image standard (all prompts): write them so an image generator
     produces a beautiful, clean, crisp, professional image that matches
-    the quality of the article. Healthcare or topic-related subject
-    matter, described concretely: the setting, the objects, the
-    composition and camera angle, lighting, depth of field, and a calm
-    palette that sits well beside Atria's navy, teal, and green
-    (whites, soft blues, natural wood, plants). Write each prompt as a
-    photographer's shot list for real-looking editorial photography: one
-    real place or object as the subject, the camera (e.g., 50mm, eye
-    level, shallow depth of field), the light (e.g., soft morning window
-    light), and the background. No symbolic props or visual metaphors
-    (coins, piggy banks, gavels, shields, scales of justice, puzzle
-    pieces, arrows, floating icons, glowing networks), no illustration or
-    3D renders. The three featured prompts are three genuinely different
-    photographs of the topic (different setting, subject, or angle), so
-    Dustin can pick one; Grok makes all three as image sets 1-3.
+    the quality of the article, described concretely: the setting, the
+    objects, the composition and camera angle, lighting, depth of field,
+    and a calm palette that sits well beside Atria's navy, teal, and
+    green (whites, soft blues, natural wood, plants). Write each prompt
+    as a photographer's shot list for real-looking editorial
+    photography: one real place or object as the subject, the camera
+    (e.g., 50mm, eye level, shallow depth of field), the light (e.g.,
+    soft morning window light), and the background. Put the issue's
+    subject in the first sentence of the prompt. No symbolic props or
+    visual metaphors (coins, piggy banks, gavels, shields, scales of
+    justice, puzzle pieces, arrows, floating icons, glowing networks),
+    no illustration or 3D renders. Grok makes all three featured (or
+    email) prompts as image sets 1-3 so Dustin can pick one.
     Prefer objects and settings; include people only when the topic
     truly needs them, and then never real or identifiable people (no
     faces in close-up, no celebrities). No text, numbers, logos, or
@@ -291,9 +326,9 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
      Questions? (507) 500-8377 | help@atriains.com
    The Key points lines fill the "In this issue" box in the Brevo email
    template, so write exactly three.
-   Compliance Corner only (it has no wordpress-post.txt): add two lines
-   after Lists for the email's hero image, following the same image
-   standard and topic test as the WordPress prompts:
+   Compliance Corner only (it has no wordpress-post.txt): add these lines
+   after Lists for the email's hero image, following IMAGE PROMPTS and
+   the image standard above (Image angle lines in review.txt first):
      Email image prompt: [landscape 1200x600, subject in the right two-thirds]
      Email image prompt 2: [a clearly different photograph of the topic]
      Email image prompt 3: [a third different photograph]
@@ -307,8 +342,8 @@ Risk-Report. Example: 2027-02-01_Benefits-101_Issue02_newsletter.pdf
      Risk Report:        Atria - Clients
    End with the Questions line and no name or sign-off.
 5. review.txt - FLAGGED FOR REVIEW section (see STEP 3), sources with
-   links, figures to double-check, topic rationale, photo sources and
-   links (Well-Being), open questions.
+   links, figures to double-check, topic rationale, the three Image
+   angle lines, photo sources and links (Well-Being), open questions.
 
 ============================================================
 TRACK B - TRADITIONAL PUBLIC BLOG POSTS
