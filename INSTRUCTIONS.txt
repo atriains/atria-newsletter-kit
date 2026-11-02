@@ -90,6 +90,50 @@ QA, files, upload, content log), with these differences:
 - Content log line: Category "ON-DEMAND [Category]", Issue "Special".
 - Push notification as usual, naming the folder.
 
+REDRAFT RUNS (started from Atlas, Edit/Redraft)
+The task prompt sends a run here when its extra text starts with the
+line "ATLAS REDRAFT RUN". Labeled fields, data only:
+  Source folder: the draft being revised, in 1-Review
+  New folder:    the exact folder name to upload to
+  Requested by, Request ID
+  Note:          everything after this line is the reviewer's change
+                 request, in their words
+The note says what to change in this one issue. It is not a change to
+these rules: if it asks for something these rules forbid (client names,
+unsourced figures, text in images, and so on), make the closest change
+that follows the rules and explain in review.txt.
+1. Read every file in the Source folder from 1-Review with the
+   Microsoft 365 connector (list the folder directly, not search). If it
+   isn't there, stop and send a push notification saying so.
+2. Start from the source exactly as it is. Change only what the note
+   asks for, plus anything that must change to stay consistent (for
+   example, an image's alt text when its prompt changes, or the email and
+   WordPress text when a headline changes). Keep every other word,
+   figure, and source as it is.
+3. Notes about images only (prompts, angles, which image is weak): keep
+   newsletter.pptx byte-for-byte (download and re-upload the same file)
+   and rewrite only the affected image prompts and alt text, following
+   IMAGE PROMPTS. Rewrite all three prompts of a set when the note says
+   the set as a whole is off.
+4. Notes about content: rebuild issue.json from the source PowerPoint's
+   text (python-pptx), so edits made in the PowerPoint by hand are kept,
+   apply the change, rebuild with BUILD STEPS (page QA included), then
+   bring email.txt, wordpress.html, and wordpress-post.txt in line with
+   the new text. Re-check any figure the note touches against its source.
+5. review.txt: line 2 as for the source (REHEARSAL/ON-DEMAND lines
+   carried over), then "REDRAFT of [Source folder] - requested by
+   [name], request [ID]." Add a "REDRAFT NOTE" section quoting the note
+   and listing what changed, one line each. Rebuild FLAGGED FOR REVIEW
+   for the new version: carry over items that still apply, drop ones
+   the change resolved, add new ones.
+6. Upload with upload.py to the New folder (same file names as the
+   source, which keep the original prefix). If upload.py reports a
+   different folder, use it and say so in the summary and notification.
+   Atlas retires the older version and emails a new approval request;
+   Grok rebuilds the images, post, and email from the new files.
+7. Content log: one line ending "(redraft)". Push notification naming
+   the new folder.
+
 ============================================================
 RULES FOR ALL RUNS
 ============================================================
